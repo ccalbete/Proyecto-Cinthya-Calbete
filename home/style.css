@@ -4,8 +4,14 @@
     margin: 0;
 }
 
-li {
-    display: inline;
+nav > ul > li{
+    display: inline-block;
+    width: 10%;
+}
+
+section > ul {
+    display: grid;
+    justify-content: center;
 }
 
 nav{
@@ -15,7 +21,7 @@ nav{
 body{
     display: grid;
     grid-template-areas: "header header"
-                         "p p"
+                         "title title"
                          "tableSummary listPendings"
                          "footer footer";
     grid-template-columns: 7fr 3fr;
@@ -28,8 +34,8 @@ header{
     background-color: red;
 }
 
-p{
-    grid-area: p;
+#title{
+    grid-area: title;
     background-color: royalblue;
     text-align: center;
 }
@@ -41,6 +47,7 @@ p{
 
 #listPendings{
     grid-area: listPendings;
+    text-align: center;
 }
 
 footer{
@@ -50,4 +57,9 @@ footer{
 
 a{
     text-decoration: none;
+    color: white;
+}
+
+section > ul{
+    list-style-type: none;
 }
