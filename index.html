@@ -5,19 +5,24 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>Login</h1>
-    <form>
-        <label for="username">
-            <span>Username: </span>
-            <input type="text" name="username">
-        </label>
-        <label for="password">
-            <span>Password: </span>
-            <input type="password" name="password">
-        </label>
-        <button name="confirm">Confirm</button>
-    </form>
+    <main>
+        <form>
+            <h1>Login</h1>
+            <label for="username" id="username">
+                <span>Username: </span>
+                <input type="text" name="username" required>
+            </label>
+            <label for="password" id="password">
+                <span>Password: </span>
+                <input type="password" name="password" required>
+            </label>
+            <label>
+            <button name="confirm">Confirm</button>
+            </label>
+        </form> 
+    </main>
 </body>
 </html>
