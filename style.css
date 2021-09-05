@@ -5,10 +5,14 @@
 }
  
 body{
-    background-image: url(background.png);
     display: grid;
     align-items: center;
     justify-items: center;
+    background: url(background.png) no-repeat center center fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
 }
 
 
@@ -33,19 +37,11 @@ main {
 }
 
 label{
-    padding: 5px;
+    padding: 10px;
     color: white;
-}
-
-
-#username {
     display: block;
 }
 
-
-#password {
-    display: block;
-}
 
 button {
     border-radius: 6px;
@@ -54,7 +50,9 @@ button {
     size: 40px;
     border-color: white;
     width: 130px;
-    margin: auto;
-    padding: 7px;
+    margin: 0 auto;
+    padding: 7px;   
+    display: block  ;
 }
+
 
