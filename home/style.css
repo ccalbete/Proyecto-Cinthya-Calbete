@@ -1,0 +1,53 @@
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+li {
+    display: inline;
+}
+
+nav{
+    text-align: right;
+}
+
+body{
+    display: grid;
+    grid-template-areas: "header header"
+                         "p p"
+                         "tableSummary listPendings"
+                         "footer footer";
+    grid-template-columns: 7fr 3fr;
+    grid-template-rows: 1fr 1fr 15fr 1fr;
+    height: 100vh;
+}
+
+header{
+    grid-area: header;
+    background-color: red;
+}
+
+p{
+    grid-area: p;
+    background-color: royalblue;
+    text-align: center;
+}
+
+#tableSummary{
+    grid-area: tableSummary;
+    background-color: yellow;
+}
+
+#listPendings{
+    grid-area: listPendings;
+}
+
+footer{
+    grid-area: footer;
+    background-color: teal;
+}
+
+a{
+    text-decoration: none;
+}
