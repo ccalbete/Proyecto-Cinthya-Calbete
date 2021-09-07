@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add expense</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <form>
+        <h1>Add expense</h1>
+        <label for="month">
+            <span>Month </span>
+            <input type="month"> 
+        </label>   
+        <label for="place">
+            <span>Place </span>
+            <input list="places" autocomplete="nope">
+            <datalist id="places">
+                <option>Mercado libre</option>
+                <option>Supermarket Frog</option>
+                <option>Supermarket Disco</option>
+                <option>Pharmacy Farmashop</option>
+                <option>Pharmacy San Roque</option>
+                <option>University ORT</option>
+                <option>Abitab</option>
+            </datalist>
+        </label>
+        <label for="category">
+            <span>Category </span>
+            <input list="categories" autocomplete="nope">
+            <datalist id="categories">
+                <option>Food</option>
+                <option>Clothes</option>
+                <option>Outing</option>
+                <option>Transportation</option>
+                <option>Cleaning</option>
+                <option>Pharmacy</option>
+            </datalist>
+        </label>
+        <label for="amount">
+            <span>Amount </span>
+            <input type="number" name="amount" required>
+        </label>
+        <label for="paymentMode">
+            <span>Payment mode </span>
+            <input list="paymentModes" autocomplete="nope">
+            <datalist id="paymentModes">
+                <option>Cash</option>
+                <option>BROU debit card</option>
+                <option>Santander debit card</option>
+                <option>Santander credit card</option>
+                <option>Itau credit card</option>
+                <option>Food card</option>
+            </datalist>
+        </label>
+        <label for="isFixedExpense">
+            <span>Is fixed expense</span>
+            <input list="isFixedExpense" autocomplete="nope">
+            <datalist id="isFixedExpense">
+                <option>Booking</option>
+                <option>Credit card</option>
+                <option>University</option>
+                <option>English course</option>
+            </datalist>
+        </label>
+        <label>
+            <button name="save">Save</button>
+        </label>
+    </form>
+</body>
+</html>
