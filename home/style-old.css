@@ -1,0 +1,97 @@
+:root {
+    --blue: #264653;
+    --green: #2a9d8f;
+    --red: #e76f51;
+    --orange:  #f4a261;
+    --yellow: #e9c46a;
+    --titleSize: 2.5rem;
+  }
+
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    color:white;
+}
+
+nav > ul > li{
+    display: inline-block;
+    width: 10%;
+}
+
+section > ul {
+    display: grid;
+    justify-content: center;
+    list-style-type: none;
+}
+
+nav{
+    text-align: right;
+}
+
+body{
+    display: grid;
+    grid-template-areas: "header header header"
+                         "title title title"
+                         "tableSummary . pendingsList"
+                         "footer footer footer";
+    grid-template-columns: 7fr 1fr 3fr;
+    grid-template-rows: 1fr 1fr 15fr 1fr;
+    height: 100vh;
+    background-color: var(--blue);
+}
+
+header{
+    grid-area: header;
+    background-color: var(--yellow);
+}
+
+#title{
+    grid-area: title;
+    text-align: center;
+    background-color: var(--blue);
+    color: white;
+}
+
+#tableSummary{
+    grid-area: tableSummary;
+    display: grid;
+    grid-template-columns: 2fr 2fr 2fr;
+    grid-template-rows: 1fr, 1fr;
+    justify-items: center;
+    align-items: center;
+    text-align: center;
+    height: 250px;
+    grid-gap: 20px;
+    border-radius: 13px;
+    font-size: 1rem;
+    background-color: var(--red);
+}
+
+#pendingsList{
+    grid-area: pendingsList;
+    height: 250px;
+    display: grid;
+    grid-template-rows: 1fr 3fr;
+    font-size: 1.5rem;
+    background-color: var(--orange);
+    padding: 80px;
+    border-radius: 13px;
+}
+
+
+footer{
+    grid-area: footer;
+    background-color: var(--green);
+    text-align: right;
+    color: white;
+}
+
+a{
+    text-decoration: none;
+    color: white;
+}
+
+#pendingsList > p{
+    text-align: center;
+}
