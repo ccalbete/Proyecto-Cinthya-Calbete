@@ -27,7 +27,7 @@ function credentialsValidation(){
                 exists = true;
             }
         }
-        if(i == lastUser && !exists) alert("Usuario o contraseña incorrectos")
+        // if(i == lastUser && !exists) alert("Usuario o contraseña incorrectos")
     }
 
     

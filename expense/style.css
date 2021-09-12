@@ -1,5 +1,3 @@
-
-
 *{
     box-sizing: border-box;
     padding: 0;
@@ -15,8 +13,7 @@ body{
                         ". .";
     align-items: center;
     text-align: center;
-    background: linear-gradient(to right, #6A82FB, #FC5C7D);
-    
+    background: linear-gradient(290deg, #0e2acaa1 0%, #692485fb 50.37%, #0e2acaa1 100%);
 }
 
 #addExpense{
@@ -43,8 +40,8 @@ form{
                             "saveButton saveButton";
     align-items: center;
     height: 80vh;
-    width: 1200px;
-    border-radius: 180px 20px 20px 180px;
+    width: 1000px;
+    border-radius: 20px;
     box-shadow: 0px 5px 7px rgba(0,0,0,.1), 0px 15px 100px rgba(0,0,0,.1);
     background-color: white;
 }
@@ -79,7 +76,7 @@ form{
 
 button {
     border-radius: 6px;
-    background-color: #673bce;
+    background-color: #3798B8;
     color: white;
     size: 40px;
     border-color: white;
