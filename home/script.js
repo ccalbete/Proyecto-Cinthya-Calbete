@@ -52,6 +52,21 @@ let catagories = [
     }
 ]
 
+const months = [
+    'January',
+    'February',
+    'March',
+    'April',
+    'May',
+    'June',
+    'July',
+    'August',
+    'September',
+    'October',
+    'November',
+    'December',
+];
+
 function fillPendingsList(){
     let listElements = document.getElementById("pendingsList");
 
@@ -93,4 +108,10 @@ function fillSummarySection(){
         categoryLabel.appendChild(categoryNameElement)
 
     }
+}
+
+function showTitleCurrentMonth(){
+    const titleElement = document.getElementById("title")
+    const currentDate = new Date()
+    titleElement.textContent = months[currentDate.getMonth()] + " " +currentDate.getFullYear()
 }
