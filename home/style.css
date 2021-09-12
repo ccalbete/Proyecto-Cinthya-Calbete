@@ -45,7 +45,7 @@ img{
     color: white;
 }
 
-#tableSummary{
+#summarySection{
     grid-area: summary;
     display: grid;
     grid-template-columns: 2fr 2fr 2fr;
@@ -60,7 +60,7 @@ img{
     box-shadow: 0px 5px 7px rgba(31, 30, 30, 0.3), 0px 15px 100px rgba(26, 25, 25, 0.3);
 }
 
-#tableSummary > label {
+#summarySection > label {
     width: 100%;
 }
 
@@ -77,7 +77,6 @@ img{
 
 #pendingsSection{
     grid-area: pendings; 
-    
     background: linear-gradient(290deg, #0e2acaa1 0%, #692485fb 50.37%, #0e2acaa1 100%);
     color: white;
     height: 80%;
@@ -114,4 +113,8 @@ nav > ul > li{
 li > a {
     color: white;
     text-decoration: none;
+}
+
+i{
+    display: inline-block;
 }

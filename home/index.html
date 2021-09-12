@@ -12,7 +12,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Urbanist&display=swap" rel="stylesheet">
 </head>
 
-<body>
+<body onload="fillPendingsList(); fillSummarySection()">
     <header>
         <nav>
             <ul>
@@ -27,45 +27,14 @@
     </header>
     <img src="home.jpg">
     <p id="title">September 2021</p>
-    <section id="tableSummary">
-        <label class="backgroundBlue">
-            <p class="spent">$10.000</p>
-            <p>Food</p>
-        </label>
-        <label class="backgroundSkyblue">
-            <p class="spent">$2.000</p>
-            <p>Outings</p>
-        </label>
-        <label class="backgroundBlue">
-            <p class="spent">$1500</p>
-            <p>Clothes</p>
-        </label>
-        <label class="backgroundSkyblue">
-            <p class="spent">$500</p>
-            <p>Transportation</p>
-        </label>
-        <label class="backgroundBlue">
-            <p class="spent">$1800</p>
-            <p>Cleaning</p>
-        </label>
-        <label class="backgroundSkyblue">
-            <p class="spent">$600</p>
-            <p>Pharmacy</p>
-        </label>
-        </section>
-        <section id=pendingsSection>
-           <p>Pendings</p>
-            <ul id="pendingsList">
-                <li><i class="far fa-check-circle"></i> Booking</li>
-                <li><i class="far fa-circle"></i> Credit card</li>
-                <li><i class="far fa-circle"></i> University</li>
-                <li><i class="far fa-check-circle"></i> English course</li>
-                <li><i class="far fa-check-circle"></i> Gym</li>
-                <li><i class="far fa-check-circle"></i> Internet</li>
-            </ul>
-        </section>
+    <section id="summarySection"> </section>
+    <section id=pendingsSection>
+        <p>Pendings</p>
+        <ul id="pendingsList"> </ul>
+    </section>
 </body>
 <footer>
     Manage your movements
 </footer>
+<script src="script.js"></script>
 </html>
