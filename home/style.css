@@ -9,6 +9,7 @@
     margin: 0;
     font-family: 'Urbanist', sans-serif;
 }
+
 body{
     display: grid;
     grid-template-columns: 3fr 3fr;

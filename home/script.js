@@ -25,7 +25,7 @@ let fixedExpenses = [
     }
 ]
 
-let catagories = [
+let categories = [
     {
         name: "Food",
         spent: "15000"
@@ -89,7 +89,7 @@ function fillSummarySection(){
     let lastColor = SKYBLUE;
     const summarySection = document.getElementById("summarySection");
     
-    for(let i=0; i < catagories.length; i++){
+    for(let i=0; i < categories.length; i++){
         let categoryLabel = document.createElement("label");
         let spentElement = document.createElement("p");
         let categoryNameElement = document.createElement("p");
@@ -101,10 +101,10 @@ function fillSummarySection(){
             categoryLabel.className = "backgroundSkyblue";
             lastColor = SKYBLUE;
         }
-        spentElement.textContent = catagories[i].spent;
+        spentElement.textContent = categories[i].spent;
         spentElement.className = "spent";
         categoryLabel.appendChild(spentElement);
-        categoryNameElement.textContent = catagories[i].name;
+        categoryNameElement.textContent = categories[i].name;
         categoryLabel.appendChild(categoryNameElement)
 
     }

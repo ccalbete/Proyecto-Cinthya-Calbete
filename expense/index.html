@@ -6,38 +6,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Add expense</title>
     <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Urbanist&display=swap" rel="stylesheet">
 </head>
-<body>
+<body onload="setCurrentDateByDefault(); fillListsValues()">
     <p id="addExpense">Add expense</p>
     <form>
         <label for="month" id="month">
             <span>Month </span>
             <input type="month"> 
         </label>   
-        <label for="place" id="place">
+        <label>
             <span>Place </span>
             <input list="places" autocomplete="nope">
-            <datalist id="places">
-                <option>Mercado libre</option>
-                <option>Supermarket Frog</option>
-                <option>Supermarket Disco</option>
-                <option>Pharmacy Farmashop</option>
-                <option>Pharmacy San Roque</option>
-                <option>University ORT</option>
-                <option>Abitab</option>
-            </datalist>
+            <datalist id="places"> </datalist>
         </label>
         <label for="category" id="category">
             <span>Category </span>
             <input list="categories" autocomplete="nope">
-            <datalist id="categories">
-                <option>Food</option>
-                <option>Clothes</option>
-                <option>Outing</option>
-                <option>Transportation</option>
-                <option>Cleaning</option>
-                <option>Pharmacy</option>
-            </datalist>
+            <datalist id="categories"> </datalist>
         </label>
         <label for="amount" id="amount">
             <span>Amount </span>
@@ -46,24 +32,12 @@
         <label for="paymentMode" id="paymentmode">
             <span>Payment mode </span>
             <input list="paymentModes" autocomplete="nope">
-            <datalist id="paymentModes">
-                <option>Cash</option>
-                <option>BROU debit card</option>
-                <option>Santander debit card</option>
-                <option>Santander credit card</option>
-                <option>Itau credit card</option>
-                <option>Food card</option>
-            </datalist>
+            <datalist id="paymentModes"> </datalist>
         </label>
-        <label for="isFixedExpense" id="isFixedExpense">
+        <label for="isFixedExpense" id="isFixedExpenseLabel">
             <span>Is fixed expense</span>
             <input list="isFixedExpense" autocomplete="nope">
-            <datalist id="isFixedExpense">
-                <option>Booking</option>
-                <option>Credit card</option>
-                <option>University</option>
-                <option>English course</option>
-            </datalist>
+            <datalist id="isFixedExpense"> </datalist>
         </label>
         <label id="saveButton">
             <button name="save">Save</button>
