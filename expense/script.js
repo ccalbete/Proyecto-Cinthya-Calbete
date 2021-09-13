@@ -1,9 +1,15 @@
 
 const monthElement = document.querySelector('input[type="month"]');
 const placesListElement =  document.getElementById("places");
+const placeInput = document.getElementById("placeInput");
 const categoriesListElement =  document.getElementById("categories");
+const categoryInput = document.getElementById("categoryInput");
+const amountInput = document.getElementById("amountInput");
 const paymentModesListElement =  document.getElementById("paymentModes");
+const paymentModeInput = document.getElementById("paymentModeInput");
 const fixedExpensesListElement = document.getElementById("isFixedExpense");
+const isFixedExpenseInput = document.getElementById("isFixedExpenseInput");
+const saveButtonElement = document.getElementById("saveButton");
 
 let places = [
     "Mercado libre",
@@ -40,6 +46,7 @@ let fixedExpenses = [
     "English course",
 ]
 
+saveButtonElement.addEventListener("click", saveData());
 
 function setCurrentDateByDefault(){
     const currentDate= new Date()
@@ -52,7 +59,7 @@ function fillListsValues(){
     fillList(places, placesListElement);
     fillList(categories, categoriesListElement);
     fillList(paymentModes, paymentModesListElement);
-    fillList(fixedExpenses, fixedExpensesListElement)
+    fillList(fixedExpenses, fixedExpensesListElement);
 }
 
 function fillList(listValues, listElement){
@@ -62,3 +69,15 @@ function fillList(listValues, listElement){
         option.value = listValues[i];
     }
 }
+
+function saveData(){
+    const monthValue = monthElement.value;
+    const placeValue = placeInput.value;
+    const categoryValue = categoryInput.value;
+    const amountValue = amountInput.value;
+    const paymentModeValue = paymentModeInput.value;
+    const fixedExpenseValue = isFixedExpenseInput.value;
+}
+
+
+

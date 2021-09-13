@@ -13,34 +13,34 @@
     <form>
         <label for="month" id="month">
             <span>Month </span>
-            <input type="month"> 
+            <input type="month" required> 
         </label>   
         <label>
             <span>Place </span>
-            <input list="places" autocomplete="nope">
+            <input id="placeInput" list="places" autocomplete="nope">
             <datalist id="places"> </datalist>
         </label>
         <label for="category" id="category">
             <span>Category </span>
-            <input list="categories" autocomplete="nope">
+            <input id="categoryInput" list="categories" autocomplete="nope">
             <datalist id="categories"> </datalist>
         </label>
         <label for="amount" id="amount">
             <span>Amount </span>
-            <input type="number" name="amount" required>
+            <input id="amountInput" type="number" name="amount" required>
         </label>
         <label for="paymentMode" id="paymentmode">
             <span>Payment mode </span>
-            <input list="paymentModes" autocomplete="nope">
+            <input id="paymentModeInput" list="paymentModes" autocomplete="nope" required>
             <datalist id="paymentModes"> </datalist>
         </label>
         <label for="isFixedExpense" id="isFixedExpenseLabel">
             <span>Is fixed expense</span>
-            <input list="isFixedExpense" autocomplete="nope">
+            <input id="isFixedExpenseInput" list="isFixedExpense" autocomplete="nope">
             <datalist id="isFixedExpense"> </datalist>
         </label>
-        <label id="saveButton">
-            <button name="save">Save</button>
+        <label id="saveButtonLabel">
+            <button id="saveButton">Save</button>
         </label>
     </form>
     <script src="script.js"></script>

@@ -72,7 +72,7 @@ form{
     grid-area: isFixedExpense;
 }
 
-#saveButton{
+#saveButtonLabel{
     grid-area: saveButton;
 }
 
