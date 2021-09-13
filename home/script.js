@@ -101,7 +101,7 @@ function fillSummarySection(){
             categoryLabel.className = "backgroundSkyblue";
             lastColor = SKYBLUE;
         }
-        spentElement.textContent = categories[i].spent;
+        spentElement.textContent = "$"+categories[i].spent;
         spentElement.className = "spent";
         categoryLabel.appendChild(spentElement);
         categoryNameElement.textContent = categories[i].name;
