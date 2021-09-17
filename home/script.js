@@ -75,11 +75,12 @@ function fillPendingsList(){
         const iconItem =  document.createElement("i");
 
         listElements.appendChild(listItem);
-        listItem.textContent = fixedExpenses[i].name + " ";
         listItem.appendChild(iconItem);
+        listItem.textContent = fixedExpenses[i].name + " ";
         iconItem.className="far";
         iconItem.classList.toggle("fa-circle", fixedExpenses[i].isPending);
         iconItem.classList.toggle("fa-check-circle", !fixedExpenses[i].isPending);
+        
     }
 }
 

@@ -21,6 +21,7 @@ function credentialsValidation(){
     let exists = false;
     let lastUser = users.length-1
     
+    console.log(username)
     for(let i=0; i < users.length; i++){
         if(users[i].username === username.value){
             if(users[i].password === password.value) {
