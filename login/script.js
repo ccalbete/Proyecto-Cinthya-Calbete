@@ -3,8 +3,8 @@ const password = document.getElementById("password");
 const confirmButton = document.getElementById("confirmButton")
 let users = [
     {  
-        username: "Pepe",
-        password: "pepe01" 
+        username: "a",
+        password: "b" 
     },
     {
         username: "Antonio",
@@ -22,16 +22,17 @@ confirmButton.addEventListener("click", credentialsValidation)
 function credentialsValidation(){
     let exists = false;
     let lastUser = users.length-1
-    
-    console.log(username.value)
-    for(let i=0; i < users.length; i++){
-        if(users[i].username === username.value){
-            if(users[i].password === password.value) {
+
+   for(let i=0; i < users.length; i++){
+        if(users[i].username == username.value){
+            if(users[i].password == password.value) {
                 exists = true;
+                break;
             }
         }
-        // if(i == lastUser && !exists) alert("Usuario o contraseña incorrectos")
-    }
+        if(i == lastUser && !exists) alert("Usuario o contraseña incorrectos") 
+    } 
+    
 
     
 }
