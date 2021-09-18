@@ -46,7 +46,7 @@ let fixedExpenses = [
     "English course",
 ]
 
-saveButtonElement.addEventListener("click", saveData());
+let expenses = [];
 
 function setCurrentDateByDefault(){
     const currentDate= new Date()
@@ -70,14 +70,29 @@ function fillList(listValues, listElement){
     }
 }
 
+
+
+saveButtonElement.addEventListener("click", saveData);
+
 function saveData(){
-    const monthValue = monthElement.value;
+    const yearMonthValue = (monthElement.value)
+    const yearValue = yearMonthValue.substr(0,4)
+    const monthValue = yearMonthValue.substr(6,7)
     const placeValue = placeInput.value;
     const categoryValue = categoryInput.value;
     const amountValue = amountInput.value;
     const paymentModeValue = paymentModeInput.value;
     const fixedExpenseValue = isFixedExpenseInput.value;
+    expenses.push(
+            {
+              year: yearValue,
+              month: monthValue,
+              place: placeValue,
+              category: categoryValue,
+              amount: amountValue,
+              paymentMode: paymentModeValue,
+              fixedExpense: isFixedExpenseValue  
+        }
+    )  
 }
-
-
 
