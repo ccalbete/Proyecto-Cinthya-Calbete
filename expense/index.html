@@ -6,43 +6,49 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Add expense</title>
     <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/ad5342c132.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Urbanist&display=swap" rel="stylesheet">
 </head>
 <body onload="setCurrentDateByDefault(); fillListsValues()">
-    <p id="addExpense">Add expense</p>
-    <form>
-        <label for="month" id="month">
-            <span>Month </span>
-            <input type="month" required> 
-        </label>   
-        <label>
-            <span>Place </span>
-            <input id="placeInput" list="places" autocomplete="nope">
-            <datalist id="places"> </datalist>
-        </label>
-        <label for="category" id="category">
-            <span>Category </span>
-            <input id="categoryInput" list="categories" autocomplete="nope">
-            <datalist id="categories"> </datalist>
-        </label>
-        <label for="amount" id="amount">
-            <span>Amount </span>
-            <input id="amountInput" type="number" name="amount" required>
-        </label>
-        <label for="paymentMode" id="paymentmode">
-            <span>Payment mode </span>
-            <input id="paymentModeInput" list="paymentModes" autocomplete="nope" required>
-            <datalist id="paymentModes"> </datalist>
-        </label>
-        <label for="isFixedExpense" id="isFixedExpenseLabel">
-            <span>Is fixed expense</span>
-            <input id="isFixedExpenseInput" list="isFixedExpense" autocomplete="nope">
-            <datalist id="isFixedExpense"> </datalist>
-        </label>
-        <label id="saveButtonLabel">
-            <button id="saveButton">Save</button>
-        </label>
-    </form>
+    <main>
+        <img src="expense-image.png">
+        <form>
+            <p>Add expense</p>
+            <label for="month" id="month">
+                <span>Month </span>
+                <input type="month" required> 
+            </label>   
+            <label>
+                <span>Place </span>
+                <input id="placeInput" list="places" autocomplete="none">
+                <datalist id="places"> </datalist>
+            </label>
+            <label for="category" id="category">
+                <span>Category </span>
+                <input id="categoryInput" list="categories" autocomplete="none">
+                <datalist id="categories"> </datalist>
+            </label>
+            <label for="amount" id="amount">
+                <span>Amount </span>
+                <input id="amountInput" type="number" name="amount" required>
+            </label>
+            <label for="paymentMode" id="paymentmode">
+                <span>Payment mode </span>
+                <input id="paymentModeInput" list="paymentModes" autocomplete="none" required>
+                <datalist id="paymentModes"> </datalist>
+            </label>
+            <label for="isFixedExpense" id="isFixedExpenseLabel">
+                <span>Is fixed expense</span>
+                <input id="isFixedExpenseInput" list="isFixedExpense" autocomplete="none">
+                <datalist id="isFixedExpense"> </datalist>
+            </label>
+            <label id="saveButtonLabel">
+                <button id="saveButton">Save</button>
+            </label>
+        </form>
+    </main>
     <script src="script.js"></script>
 </body>
 </html>

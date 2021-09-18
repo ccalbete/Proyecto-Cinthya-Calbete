@@ -17,11 +17,13 @@ let users = [
 ]
 
 
+confirmButton.addEventListener("click", credentialsValidation)
+
 function credentialsValidation(){
     let exists = false;
     let lastUser = users.length-1
     
-    console.log(username)
+    console.log(username.value)
     for(let i=0; i < users.length; i++){
         if(users[i].username === username.value){
             if(users[i].password === password.value) {
@@ -33,5 +35,3 @@ function credentialsValidation(){
 
     
 }
-
-confirmButton.addEventListener("click", credentialsValidation())

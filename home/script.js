@@ -73,10 +73,9 @@ function fillPendingsList(){
     for(let i=0; i < fixedExpenses.length; i++){
         const listItem = document.createElement("li");
         const iconItem =  document.createElement("i");
-
+        listItem.textContent = fixedExpenses[i].name + " ";
         listElements.appendChild(listItem);
         listItem.appendChild(iconItem);
-        listItem.textContent = fixedExpenses[i].name + " ";
         iconItem.className="far";
         iconItem.classList.toggle("fa-circle", fixedExpenses[i].isPending);
         iconItem.classList.toggle("fa-check-circle", !fixedExpenses[i].isPending);
