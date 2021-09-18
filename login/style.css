@@ -13,7 +13,7 @@ body{
     display: grid;
     align-items: center;
     justify-items: center;
-    background: url(background.jfif) no-repeat center center fixed; 
+    background: linear-gradient(128deg, rgba(33,210,254,1) 0%, rgba(115,107,254,1) 56%, rgba(207,24,242,0.8911939775910365) 98%);
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
