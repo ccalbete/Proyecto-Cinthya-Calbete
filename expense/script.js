@@ -1,4 +1,3 @@
-
 const monthElement = document.querySelector('input[type="month"]');
 const placesListElement =  document.getElementById("places");
 const placeInput = document.getElementById("placeInput");
