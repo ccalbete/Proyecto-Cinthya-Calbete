@@ -11,7 +11,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Urbanist&display=swap" rel="stylesheet">
 </head>
-<body>
+<body onload="fillListsValues()">
     <header>
         <nav>
             <ul>
@@ -29,11 +29,6 @@
         <img src="income.jpg">
         <form  action="../home/index.html" onsubmit="saveData()">
             <p>Add income</p>  
-            <label>
-                <span>Origin </span>
-                <input id="originInput" list="origins" autocomplete="none">
-                <datalist id="origins"> </datalist>
-            </label>
             <label for="reason" id="reason">
                 <span>Reason </span>
                 <input id="reasonInput" list="reasons" autocomplete="none">
