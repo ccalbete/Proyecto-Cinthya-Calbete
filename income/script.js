@@ -1,6 +1,7 @@
 let reasons = [
     "Salary",
-    "Leftover last month"
+    "Leftover last month",
+    "Present"
 ]
 
 let paymentModes = [
