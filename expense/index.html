@@ -27,7 +27,7 @@
     </header>
     <main>
         <img src="expense-image.png">
-        <form>
+        <form  action="../home/index.html" onsubmit="saveData()">
             <p>Add expense</p>
             <label for="month" id="month">
                 <span>Month </span>
@@ -57,7 +57,11 @@
                 <input id="isFixedExpenseInput" list="isFixedExpense" autocomplete="none">
                 <datalist id="isFixedExpense"> </datalist>
             </label>
-            <label id="saveButtonLabel">
+            <label>
+                <span>Add more expenses</span>
+                <input type="checkbox" id="addMoreExpenses">
+            </label>
+            <label id="saveButtonLabel" >
                 <button id="saveButton">Save</button>
             </label>
         </form>

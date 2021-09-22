@@ -8,6 +8,7 @@ const paymentModesListElement =  document.getElementById("paymentModes");
 const paymentModeInput = document.getElementById("paymentModeInput");
 const fixedExpensesListElement = document.getElementById("isFixedExpense");
 const isFixedExpenseInput = document.getElementById("isFixedExpenseInput");
+const addMoreExpensesElement = document.getElementById("addMoreExpenses");
 const saveButtonElement = document.getElementById("saveButton");
 
 let places = [
@@ -70,8 +71,8 @@ function fillList(listValues, listElement){
 }
 
 
+saveButtonElement.addEventListener("click", saveData)
 
-saveButtonElement.addEventListener("click", saveData);
 
 function saveData(){
     const yearMonthValue = (monthElement.value)
@@ -82,6 +83,7 @@ function saveData(){
     const amountValue = amountInput.value;
     const paymentModeValue = paymentModeInput.value;
     const fixedExpenseValue = isFixedExpenseInput.value;
+    const goToHomePage = !addMoreExpensesElement.checked;
     expenses.push(
             {
               year: yearValue,
@@ -93,5 +95,6 @@ function saveData(){
               fixedExpense: fixedExpenseValue  
         }
     )  
+    return goToHomePage;
 }
 
