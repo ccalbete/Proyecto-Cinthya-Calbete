@@ -90,7 +90,7 @@ function saveData(){
               category: categoryValue,
               amount: amountValue,
               paymentMode: paymentModeValue,
-              fixedExpense: isFixedExpenseValue  
+              fixedExpense: fixedExpenseValue  
         }
     )  
 }

@@ -27,10 +27,10 @@ function credentialsValidation(){
         if(users[i].username == username.value){
             if(users[i].password == password.value) {
                 exists = true;
-                alert("Welcome")
                 break;
             }
         }
         if(i == lastUser && !exists) alert("Username or password is incorrect") 
     } 
+    return exists;
 }
