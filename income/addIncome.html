@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add income</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/ad5342c132.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Urbanist&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li> <a href="./../home/index.html" alt="Home"> Home </a> </li>
+                <li> <a href="./../expense/addExpense.html" alt="Expense"> Expense </a> </li>
+                <li> <a href="./../income/addIncome.html"alt="Income"> Income </a> </li>
+                <li> <a href="#" alt="Transference"> Transference </a> </li>
+                <li> <a href="#" alt="Old summaries"> Old summaries </a> </li>
+                <li> <a href="#" alt="Settings"> Settings </a> </li>
+                <li>User</li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <img src="income.jpg">
+        <form  action="../home/index.html" onsubmit="saveData()">
+            <p>Add income</p>  
+            <label>
+                <span>Origin </span>
+                <input id="originInput" list="origins" autocomplete="none">
+                <datalist id="origins"> </datalist>
+            </label>
+            <label for="reason" id="reason">
+                <span>Reason </span>
+                <input id="reasonInput" list="reasons" autocomplete="none">
+                <datalist id="reasons"> </datalist>
+            </label>
+            <label for="amount" id="amount">
+                <span>Amount </span>
+                <input id="amountInput" type="number" name="amount" required>
+            </label>
+            <label for="paymentMode" id="paymentmode">
+                <span>Payment mode </span>
+                <input id="paymentModeInput" list="paymentModes" autocomplete="none" required>
+                <datalist id="paymentModes"> </datalist>
+            </label>
+            <label id="saveButtonLabel" >
+                <button id="saveButton">Save</button>
+            </label>
+        </form>
+    </main>
+    <script src="script.js"></script>
+</body>
+<footer>
+    Manage your movements
+</footer>
+</html>
