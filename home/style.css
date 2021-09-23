@@ -82,10 +82,14 @@ img{
     color: white;
     height: 80%;
     box-shadow: 0px 5px 7px rgba(31, 30, 30, 0.3), 0px 15px 100px rgba(26, 25, 25, 0.3);
+    animation-name: agrandar; 
+    animation: 4s;
+    animation-timing-function: linear;
 }
 
 #pendingsSection > p{
     font-size: 19px;
+    animation-delay: 200ms;
 }
 
 #pendingsList{
@@ -93,6 +97,37 @@ img{
     grid-template-columns: 2fr 2fr 2fr;
     grid-template-rows: 2fr 2fr;
     height: 200px;
+    animation-delay: 400ms;
+}
+
+
+
+@keyframes agrandar {
+    0% {
+        width: 0;
+        
+    }
+    10% {
+        width: 20%;
+    }
+    30%{
+        width: 40%;
+        color:red
+    }
+    60%{
+        width: 70%;
+        color: green
+    }
+    70% {
+        width: 100%;
+    }
+    85% {
+        width: 50%;
+    }
+    100% {
+        width: 100%;
+    }
+    
 }
 
 footer{
@@ -237,6 +272,4 @@ i{
         margin: 8px;
         font-size: 10px;
     }
-
-
 }
