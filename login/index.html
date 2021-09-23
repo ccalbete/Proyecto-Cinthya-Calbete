@@ -11,7 +11,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Urbanist&display=swap" rel="stylesheet">
 </head>
-<body>
+<body onload="getUsers()">
     <main>
         <form  action="../home/monthSummary.html" onsubmit="credentialsValidation()">
             <p>Login</p>
@@ -31,5 +31,6 @@
         </form> 
     </main>
     <script src="script.js"></script>
+    <script type="text/javascript" src="./../utils/users.json"></script>
 </body>
 </html>

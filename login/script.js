@@ -1,27 +1,24 @@
 const username = document.getElementById("username");
 const password = document.getElementById("password");
 const confirmButton = document.getElementById("confirmButton")
-let users = [
-    {  
-        username: "a",
-        password: "b" 
-    },
-    {
-        username: "Antonio",
-        password: "Mypassword123"
-    },
-    {
-        username: "Felipe10",
-        password: "123pass123"
-    }
-]
+let users
 
+
+
+function getUsers(){
+    fetch("./../utils/users.json")
+    .then(function(response){
+        return response.json();
+    })
+    .then(function(data){
+        users = data;
+    })
+}
 
 confirmButton.addEventListener("click", credentialsValidation)
 
 function credentialsValidation(){
     let exists = false;
-    let lastUser = users.length-1
 
    for(let i=0; i < users.length; i++){
         if(users[i].username == username.value){
@@ -30,7 +27,8 @@ function credentialsValidation(){
                 break;
             }
         }
-        if(i == lastUser && !exists) alert("Username or password is incorrect") 
     } 
+    if(!exists) alert("Username or password is incorrect") 
     return exists;
 }
+
