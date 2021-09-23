@@ -124,6 +124,10 @@ p{
     padding-top: 5px
 }
 
+.menuButton a {
+    padding: 15px
+}
+
 nav > ul > li{
     box-shadow: 0px 15px 20px var(--background-image-color)
 }
