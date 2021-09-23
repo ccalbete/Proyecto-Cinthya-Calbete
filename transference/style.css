@@ -2,6 +2,7 @@
     --background-color-green: #12A0A2;
     --background-header-footer: #337AC1;
     --background-color-blue: #045c8a;
+    --background-color-skyblue: #5da9db;
 }
 
 
@@ -69,8 +70,6 @@ form {
     background-color: white;
     width: 450px;
     justify-content: center;
-    align-items: center;
-    justify-items: center;
 }
 
 label{
@@ -79,6 +78,7 @@ label{
     justify-content: left;
     align-items: center;
     margin: 10px;
+    padding-left: 50px;
 }
 
 input{
@@ -112,6 +112,7 @@ p{
     text-align: center;
     font-size: 25px;
     margin-bottom: 20px;
+    margin-top: 20px;
 }
 
 button {
@@ -123,7 +124,7 @@ button {
     margin-top: 30px;
     display: block;
     cursor: pointer;
-    background-color: #028fd4;
+    background-color: #14699f;
     color: white;
     border-color: white;
 }

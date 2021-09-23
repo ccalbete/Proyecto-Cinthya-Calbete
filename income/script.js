@@ -22,7 +22,7 @@ let saveButtonElement = document.getElementById("saveButton")
 
 function fillListsValues(){
     fillList(reasons, reasonListElement);
-    fillList(paymentModes, paymentModesListElement);
+    fillList(paymentModes, paymentmodeListElement);
 }
 
 
