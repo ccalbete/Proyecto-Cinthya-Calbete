@@ -84,6 +84,7 @@ function saveData(){
     const paymentModeValue = paymentModeInput.value;
     const fixedExpenseValue = isFixedExpenseInput.value;
     const goToHomePage = !addMoreExpensesElement.checked;
+
     expenses.push(
             {
               year: yearValue,
@@ -95,6 +96,14 @@ function saveData(){
               fixedExpense: fixedExpenseValue  
         }
     )  
+    if(!goToHomePage){
+        placeInput.value = "";
+        categoryInput.value = "";
+        amountInput.value = "";
+        paymentModeInput.value = "";
+        isFixedExpenseInput.value = "";
+        addMoreExpensesElement.checked = false;
+    }
     return goToHomePage;
 }
 

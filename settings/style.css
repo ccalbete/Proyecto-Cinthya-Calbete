@@ -1,0 +1,94 @@
+:root {
+    --background-header-footer: #337AC1;
+    --background-image-color: #3798B8;
+  }
+
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    font-family: 'Urbanist', sans-serif;
+}
+
+header{
+    grid-area: header;
+    background-color: var(--background-header-footer);
+    color: white;
+    justify-content: center;
+    text-align: center;
+}
+
+
+nav > ul > li{
+    display: inline-block;
+    width: 10%;
+}
+
+
+
+ul {
+    list-style: none;
+}
+
+
+li > a {
+    color: white;
+    text-decoration: none;
+}
+
+main{
+    grid-area: main;
+    background: url(./Originals/background7.jpg) no-repeat center center fixed; 
+    margin: 50px 20px;
+    display: grid;
+    grid-template-areas: ". categories ."
+                         ". fixedExpenses ."
+                         ". places ."
+                         ". paymentModes ."
+                         ". incomeReasons ."   ;
+    grid-template-columns: 2fr 4fr 3fr;
+}
+
+section {
+    border: 3px solid;
+}
+
+#categoriesSection{
+    grid-area: categories;
+}
+
+#fixedExpensesSection{
+    grid-area: fixedExpenses;
+}
+
+#placesSection {
+    grid-area: places;
+}
+
+#paymentModesSection{
+    grid-area: paymentModes;
+}
+
+#incomeReasonsSection{
+    grid-area: incomeReasons;
+}
+
+
+body{
+    display: grid;
+    grid-template-areas:    "header header header"
+                            "main main main"
+                            "footer footer footer";
+    height: 100vh;
+    grid-template-rows: 1fr 10fr 1fr;
+}
+
+
+
+footer{
+    grid-area: footer;
+    text-align: right;
+    background-color: var(--background-header-footer);
+    color: white;
+    padding-right: 10px;
+}
