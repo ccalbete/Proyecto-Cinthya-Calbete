@@ -38,7 +38,7 @@ li > a {
 
 main{
     grid-area: main;
-    background: url(./Originals/background7.jpg) no-repeat center center fixed; 
+    background: url(./background7.jpg) no-repeat center center fixed; 
     margin: 50px 20px;
     display: grid;
     grid-template-areas: ". categories ."
