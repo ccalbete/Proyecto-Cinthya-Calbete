@@ -1,3 +1,9 @@
+
+const pendingsListElement = document.getElementById("pendingsList");
+const summarySectionElement = document.getElementById("summarySection");
+const titleElement = document.getElementById("title")
+const menuContainer = document.getElementById("menuContainer")
+
 let fixedExpenses = [
     {
         name: "Booking",
@@ -68,13 +74,12 @@ const months = [
 ];
 
 function fillPendingsList(){
-    let listElements = document.getElementById("pendingsList");
 
     for(let i=0; i < fixedExpenses.length; i++){
         const listItem = document.createElement("li");
         const iconItem =  document.createElement("i");
         listItem.textContent = fixedExpenses[i].name + " ";
-        listElements.appendChild(listItem);
+        pendingsListElement.appendChild(listItem);
         listItem.appendChild(iconItem);
         iconItem.className="far";
         iconItem.classList.toggle("fa-circle", fixedExpenses[i].isPending);
@@ -87,13 +92,12 @@ function fillSummarySection(){
     const BLUE = "blue";
     const SKYBLUE = "skyblue";
     let lastColor = SKYBLUE;
-    const summarySection = document.getElementById("summarySection");
     
     for(let i=0; i < categories.length; i++){
         let categoryLabel = document.createElement("label");
         let spentElement = document.createElement("p");
         let categoryNameElement = document.createElement("p");
-        summarySection.appendChild(categoryLabel)
+        summarySectionElement.appendChild(categoryLabel)
         if(lastColor === SKYBLUE){
             categoryLabel.className = "backgroundBlue";
             lastColor = BLUE;
@@ -111,7 +115,15 @@ function fillSummarySection(){
 }
 
 function showTitleCurrentMonth(){
-    const titleElement = document.getElementById("title")
     const currentDate = new Date()
     titleElement.textContent = months[currentDate.getMonth()] + " " +currentDate.getFullYear()
+}
+
+function openCloseMenu(){
+    let newClass 
+    if(menuContainer.style.display == "inline-block"){
+        menuContainer.style.display = "none"
+    }else{
+        menuContainer.style.display = "inline-block"
+    }    
 }

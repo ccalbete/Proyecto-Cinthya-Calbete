@@ -26,9 +26,9 @@ body{
 
 header{
     grid-area: header;
-    box-shadow: 0px 5px 7px rgba(31, 30, 30, 0.3), 0px 15px 100px rgba(26, 25, 25, 0.3);
     background-color: var(--background-header-footer);
     color: white;
+    justify-content: center;
 }
 
 img{
@@ -41,8 +41,8 @@ img{
     grid-area: title;
     padding: 5px;
     background-color: var(--background-image-color);
-    font-weight: bold;
     font-size: 15px;
+    margin-top: 10px;
     color: white;
 }
 
@@ -78,7 +78,7 @@ img{
 
 #pendingsSection{
     grid-area: pendings; 
-    background: linear-gradient(336deg, rgba(33,210,254,1) 15%, rgba(95,87,223,1) 86%);
+    background: linear-gradient(292deg, rgba(28,180,218,1) 53%, rgba(6,214,141,1) 84%);
     color: white;
     height: 80%;
     box-shadow: 0px 5px 7px rgba(31, 30, 30, 0.3), 0px 15px 100px rgba(26, 25, 25, 0.3);
@@ -100,6 +100,7 @@ footer{
     text-align: right;
     background-color: var(--background-header-footer);
     color: white;
+    padding-right: 10px;
 }
 
 ul {
@@ -110,9 +111,21 @@ p{
     padding: 20px;
 }
 
-nav > ul > li{
+.menuButton{
     display: inline-block;
     width: 10%;
+    height: 50px;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    text-align: center;
+    z-index: 1;
+    transition: 0.5s;
+    font-size: 13px; 
+    padding-top: 5px
+}
+
+nav > ul > li{
+    box-shadow: 0px 15px 20px var(--background-image-color)
 }
 
 li > a {
@@ -122,4 +135,104 @@ li > a {
 
 i{
     display: inline-block;
+}
+
+#hamburgerButton{
+    display: none;
+    position: relative;
+    cursor: pointer;
+}
+
+
+#menuContainer{
+    width: 100%;
+}
+
+#userButton {
+    background-color: var(--background-header-footer);
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+}
+
+#userSection {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+}
+
+#userOptions{
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    border-radius: 5px;
+}
+
+#userOptions p{
+    color: black;
+    font-size: 10px;
+    cursor: default;
+}
+
+#userOptions > a{
+    color: black;
+    padding: 10px 5px;
+    text-decoration: none;
+    display: block;
+}
+
+#userOptions a:hover{
+    color: var(--background-header-footer)
+}
+
+
+#userSection:hover #userOptions{
+    display: block;
+}
+
+#menuContainer li:hover{
+   background: rgba(0,0,0,0.1); 
+   cursor: pointer;
+}
+
+
+@media (max-width: 1300px){
+    #backgroundImage{
+        display: none;
+    }
+    body{
+        grid-template-areas: "header header header"
+                         "title title title"
+                         ". summary ."
+                         ". pendings ."
+                         "footer footer footer";
+        grid-template-columns: 2fr 3fr 3fr;
+        grid-template-rows: 1fr 1fr 6fr 5fr 1fr;                 
+    }
+    nav > ul > li{
+        box-shadow: none;
+    }
+    .spent{
+        font-size: 30px;
+    }
+}
+
+@media (max-width: 930px) {
+    #hamburgerButton{
+        color: white;
+        font-size: 20px;
+        display: inline-block;
+    }
+    #menuContainer{
+        display: none;
+    }
+    .menuButton{
+        margin: 8px;
+        font-size: 10px;
+    }
+
+
 }

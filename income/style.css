@@ -135,4 +135,5 @@ footer{
     background-color: var(--background-header-footer);
     color: white;
     height: 100%;
+    padding-right: 10px;
 }
