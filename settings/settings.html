@@ -12,7 +12,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Urbanist&display=swap" rel="stylesheet">
     <link rel="icon" href="./../images/favicon.png" type="image/x-icon">
 </head>
-<body>
+<body onload="fillSectionsData()">
     <header>
         <nav>
             <ul>
@@ -27,12 +27,15 @@
         </nav>
     </header>
     <main>
-          <section id="categoriesSection">Categories</section>
-          <section id="fixedExpensesSection">Fixes expenses</section>  
+          <section id="categoriesSection"> </section>
+          <section id="fixedExpensesSection">
+              <p>FixedExpenses</p>
+          </section>  
           <section id="placesSection">Places</section>    
           <section id="paymentModesSection">Payments modes</section>
           <section id="incomeReasonsSection">Income reasons</section>
     </main>
+    <script src="script.js"></script>
 </body>
 <footer>
     Manage your movements

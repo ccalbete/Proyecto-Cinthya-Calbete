@@ -224,7 +224,8 @@ i{
 }
 
 #userOptions a:hover{
-    color: var(--background-header-footer)
+    color: var(--background-header-footer);
+    background-color: #e8f0fe;
 }
 
 
