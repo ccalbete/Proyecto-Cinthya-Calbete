@@ -38,8 +38,11 @@ function saveIncomeData(){
             paymentMode: incomeSelectedPaymentMode,
         }
     )  
+    
+    incomeClearInputData();
+}
 
-    // Clear data in screen
+function incomeClearInputData() {
     incomeReasonsInput.value="";
     incomeAmountInput.value="";
     incomePaymentModeInput.value="";

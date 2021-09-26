@@ -53,10 +53,13 @@ function saveExpenseData(){
         }
     ) 
     
-    // Clear data in screen
+   expenseClearInputData();
+    
+}
+
+function expenseClearInputData() {
     expensePlaceInputElement.value = "";
     expenseCategoryInputElement.value = "";
     expenseAmountInput.value = "";
     expensePaymentModeInput.value = "";
 }
-

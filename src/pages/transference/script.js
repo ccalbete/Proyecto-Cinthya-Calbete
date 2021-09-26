@@ -34,7 +34,10 @@ function saveTransferenceData(){
         }
     )  
     
-    // Clear data in screen
+    transferenceClearInputData();
+}
+
+function transferenceClearInputData() {
     transferenceOriginInput.value="";
     transferenceAmountInput.value="";
     transferenceDestintationInput.value="";

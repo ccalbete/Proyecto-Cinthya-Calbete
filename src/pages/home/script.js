@@ -20,6 +20,14 @@ const months = [
     'December',
 ];
 
+function homeCreateAndFillElements() {
+    showTitleCurrentMonth();
+    fillPendingsList();
+    fillSummarySection();
+
+}
+
+
 function fillPendingsList(){
 
     for(let i=0; i < user.categories.length; i++){

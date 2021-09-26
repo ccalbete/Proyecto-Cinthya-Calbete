@@ -38,7 +38,6 @@ function createAndFillElements(pageId){
     switch(pageId) {
 
         case "home":
-            showTitleCurrentMonth();
 
             if (summarySection.getElementsByTagName('div').length >= 1) {
                 summarySection.innerHTML="";
@@ -49,24 +48,30 @@ function createAndFillElements(pageId){
                 doneListPendingsSection.innerHTML="";
             }
 
-            fillPendingsList();
-            fillSummarySection();
+            homeCreateAndFillElements();
 
             break;
         
         case "expense":
+
+            expenseClearInputData();
+
             // If places list hasn't options, it means all lists are empty, so fill all lists
             if (expensePlacesList.innerHTML === " ")  expenseCreateAndFillElements();
 
             break;
         
         case "income":
-            
+
+            incomeClearInputData();
+
             if (incomeReasonsList.innerHTML === " ") incomeCreateAndFillElements();
 
             break;
         
         case "transference":
+
+            transferenceClearInputData()
 
             if(transferenceOriginsList.innerHTML === " ") transferenceCreateAndFillElements();
             
@@ -90,6 +95,7 @@ function fillList(listValues, listElement){
     });
 }
 
+ //Find payment modes name that has property isDebit = true
 function getUserDebitPaymentModes() {
     return (user.paymentModes.filter(paymentMode => paymentMode.isDebit) ).map(paymentMode => paymentMode.name);
 }
