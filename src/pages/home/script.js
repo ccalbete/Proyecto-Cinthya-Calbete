@@ -20,77 +20,14 @@ const months = [
     'December',
 ];
 
-categories= [
-    {
-        name: "Food",
-        isFixed: false,
-        spent: 300
-    },
-    {
-        name: "Outings",
-        isFixed: false,
-        spent: 500
-    },
-    {
-        name: "Clothes",
-        isFixed: false,
-        spent: 600
-    },
-    {
-        name: "Transportation",
-        isFixed: false,
-        spent: 900
-    },
-    {
-        name: "Cleaning",
-        isFixed: false,
-        spent: 700
-    },
-    {
-        name: "Pharmacy",
-        isFixed: false,
-        spent: 840
-    },
-    {
-        name: "Booking",
-        isFixed: true,
-        spent: 0
-    },
-    {
-        name: "Credit card",
-        isFixed: true,
-        spent: 44
-    },
-    {
-        name: "University",
-        isFixed: true,
-        spent: 0
-    },
-    {
-        name: "English course",
-        isFixed: true,
-        spent: 444
-    },
-    {
-        name: "Gym",
-        isFixed: true,
-        spent: 232
-    },
-    {
-        name: "Internet",
-        isFixed: true,
-        spent: 62
-    }
-]
-
 function fillPendingsList(){
 
-    for(let i=0; i < categories.length; i++){
+    for(let i=0; i < user.categories.length; i++){
 
-        if(categories[i].isFixed) {
+        if(user.categories[i].isFixed) {
             const listItem = document.createElement("li");
-            listItem.textContent = categories[i].name;
-            if(categories[i].spent > 0) {
+            listItem.textContent = user.categories[i].name;
+            if(user.categories[i].spent > 0) {
                 paidExpensesElement.appendChild(listItem);
             } else {
                 pendingExpensesElement.appendChild(listItem);
@@ -105,7 +42,7 @@ function fillSummarySection() {
     const BLUE = "blue";
     const SKYBLUE = "skyblue";
     let lastColor = SKYBLUE;
-    const categoriesToShow = categories.filter(category => !category.isFixed);
+    const categoriesToShow = user.categories.filter(category => !category.isFixed);
 
     for(let i=0; i < categoriesToShow.length; i++) {
 

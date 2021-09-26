@@ -1,18 +1,3 @@
-let reasons = [
-    "Salary",
-    "Leftover last month",
-    "Present"
-]
-
-let paymentModes = [
-    "Cash",
-    "BROU debit card",
-    "Santader debit card",
-    "Santander credit card",
-    "Itau credit card",
-    "Food card",
-]
-
 let reasonListElement = document.getElementById("reasons")
 let amountElement = document.getElementById("amount")
 let paymentmodeListElement = document.getElementById("paymentModes")

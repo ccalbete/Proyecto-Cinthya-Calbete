@@ -15,8 +15,6 @@ function getUsers(){
     })
 }
 
-confirmButton.addEventListener("click", credentialsValidation)
-
 function credentialsValidation(){
     let exists = false;
 
