@@ -77,7 +77,7 @@ main > #home > #pendingsSection {
 main > #home > #pendingsSection > p {
     grid-area: pendingsSectionTitle;
     padding-top: 15px;
-    font-size: 20px;
+    font-size: 28px;
 }
 
 
@@ -102,7 +102,7 @@ main > #home > #pendingsSection > #paidExpenses {
 
 main > #home > #pendingsSection > ul {
     padding-top: 3px;
-    padding-bottom: 45px;
+    padding-bottom: 75px;
 }
 
 main > #home > #pendingsSection > ul > li {

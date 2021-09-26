@@ -13,39 +13,9 @@ function displayPage(pageId) {
     } else {
         displayPage("login");  
     }
-
-    checkIfElementsPageWasAlreadyCreated(pageId);
+    createAndFillElements(pageId);
 }
 
-function checkIfElementsPageWasAlreadyCreated(pageId){
-
-    switch(pageId) {
-        case "home":
-            showTitleCurrentMonth();
-           if ( !document.getElementById('summarySection').getElementsByTagName('div').length >= 1) {
-                fillPendingsList();
-                fillSummarySection();
-                break;
-           }
-        
-        case "expense":
-            setCurrentDateByDefault(); 
-            if( !document.getElementById('expensePlaces').getElementsByTagName('options').length >= 1) {
-                expenseFillListsValues();
-                break;
-            }
-        case "income":
-            if( !document.getElementById('incomeReasons').getElementsByTagName('options').length >= 1) {
-                incomeFillListsValues();
-                break;
-            }
-        case "transference":
-        if( !document.getElementById('transferenceOrigins').getElementsByTagName('options').length >= 1) {
-            transferenceFillListsValues();
-            break;
-        }
-    }
-}
 
 function hideSections() {
     const sections = ["login", "home", "expense", "income", "transference", "oldMonths"];
@@ -53,6 +23,58 @@ function hideSections() {
     sections.forEach(section => {
         document.getElementById(section).style.display = "none";
     });
+}
+
+//Check if elements page were created before creating it, to avoid duplicate data
+function createAndFillElements(pageId){
+    
+    const summarySection = document.getElementById('summarySection');
+    const toDoListPendingsSection = document.getElementById('pendingExpenses');
+    const doneListPendingsSection = document.getElementById('paidExpenses');
+    const expensePlacesList = document.getElementById('expensePlaces');
+    const incomeReasonsList = document.getElementById('incomeReasons');
+    const transferenceOriginsList = document.getElementById('transferenceOrigins');
+
+    switch(pageId) {
+
+        case "home":
+            showTitleCurrentMonth();
+
+            if (summarySection.getElementsByTagName('div').length >= 1) {
+                summarySection.innerHTML="";
+            }
+            // If items to do list are created, it means items done list too, so remove it to update it
+            if (toDoListPendingsSection.getElementsByTagName("li").length >= 1) {
+                toDoListPendingsSection.innerHTML="";
+                doneListPendingsSection.innerHTML="";
+            }
+
+            fillPendingsList();
+            fillSummarySection();
+
+            break;
+        
+        case "expense":
+
+            setCurrentDateByDefault();
+
+            // If places list hasn't options, it means all lists are empty, so fill all lists
+            if (expensePlacesList.innerHTML === " ")  expenseFillListsValues();
+
+            break;
+        
+        case "income":
+
+            if (incomeReasonsList.innerHTML === " ") incomeFillListsValues();
+
+            break;
+        
+        case "transference":
+
+            if(transferenceOriginsList.innerHTML === " ") transferenceFillListsValues();
+            
+            break;
+    }
 }
 
 function fillList(listValues, listElement){
