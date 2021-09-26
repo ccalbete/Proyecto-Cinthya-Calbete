@@ -18,7 +18,7 @@ function displayPage(pageId) {
 
 
 function hideSections() {
-    const sections = ["login", "home", "expense", "income", "transference", "old"];
+    const sections = ["login", "home", "expense", "income", "transference"];
 
     sections.forEach(section => {
         document.getElementById(section).style.display = "none";
