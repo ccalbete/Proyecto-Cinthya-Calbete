@@ -149,6 +149,17 @@ main > section > form > table > tbody > tr > td > input {
     text-align: center;
 }
 
+main > section > form > table > tbody > tr > td > p {
+    display: inline;
+    padding-left: 4px;
+    color: red;
+}
+
+main > section > form > table > tbody > tr > td > .errorInputRequired {
+    border: 1px solid;
+    border-color: red;
+}
+
 main > section > form > table > tbody > tr > td > input:focus,  main > section > form > div > input:focus{
     outline: none;
 }
@@ -180,5 +191,19 @@ footer {
 header, main, footer {
     padding: 15px 30px;
 }
+
+@media (max-width: 1350px) {
+    header > nav > ul > li {
+        margin-left: 20px;
+    }
+}
+
+@media (max-width: 905px) {
+    header > nav > ul > li {
+      padding-right: 12px;
+      padding-left: 8px;
+    }
+}
+
 
 

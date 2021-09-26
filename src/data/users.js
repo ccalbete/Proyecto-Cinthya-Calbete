@@ -86,9 +86,23 @@ let users = [
             {
                 name: "Santander credit card",
                 isDebit: false
+            },
+            {
+                name: "Itau credit card",
+                isDebit: false
+            },
+            {
+                name: "Scotiabank credit card",
+                isDebit: false
+            },
+            {
+                name: "Food card",
+                isDebit: true
             }
         ],
         places: [
+            "Brou webpage",
+            "Santander webpage",
             "Mercado libre",
             "Supermarket Frog",
             "Supermarket Disco",
@@ -102,11 +116,5 @@ let users = [
             "Leftover last month",
             "Present"
         ] 
-    },
-    {
-        username: "pepito",
-        password: "123",
-        expenses: [],
-        
     }
 ]

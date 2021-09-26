@@ -18,14 +18,14 @@ function displayPage(pageId) {
 
 
 function hideSections() {
-    const sections = ["login", "home", "expense", "income", "transference", "oldMonths"];
+    const sections = ["login", "home", "expense", "income", "transference", "old"];
 
     sections.forEach(section => {
         document.getElementById(section).style.display = "none";
     });
 }
 
-//Check if elements page were created before creating it, to avoid duplicate data
+// Checks if elements page were created before creating it, to avoid duplicate data
 function createAndFillElements(pageId){
     
     const summarySection = document.getElementById('summarySection');
@@ -95,7 +95,18 @@ function fillList(listValues, listElement){
     });
 }
 
- //Find payment modes name that has property isDebit = true
+ // Find payment modes name that has property isDebit = true
 function getUserDebitPaymentModes() {
     return (user.paymentModes.filter(paymentMode => paymentMode.isDebit) ).map(paymentMode => paymentMode.name);
+}
+
+// Returns true to know if the css class was assigned to the input
+function validateRequiredInput(input) {
+    if(input.value === "") {
+        input.classList.add("errorInputRequired");
+    }
+} 
+
+function anyRequiredInputIsMissing(requiredInputList) {
+    return requiredInputList.some(input => input.classList.contains("errorInputRequired"));
 }

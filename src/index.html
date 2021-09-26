@@ -24,8 +24,8 @@
                 <li onclick="displayPage('home')">Home</li>
                 <li onclick="displayPage('expense')">Expense</li>
                 <li onclick="displayPage('income')">Income</li>
-                <li onclick="displayPage('transference')">Transference</li>
-                <li onclick="displayPage('oldMonths')">Old months</li>
+                <li onclick="displayPage('transference')">Transfer</li>
+                <li onclick="displayPage('old')">Old</li>
                 <div class="userSection">
                     <img id="userImage" src="./assets/userIconHome.svg"/>
                     <a onclick="displayPage('login')">Logout</a>
@@ -42,13 +42,13 @@
                     <div>
                         <span>Username:</span>
                         <img src="./assets/userIconLogin.png" />
-                        <input type="text" name="username"  id="username" placeholder="Type your username" required > 
+                        <input type="text" name="username"  id="username" placeholder="Type your username"  > 
                     </div>
 
                     <div>
                         <span>Password:</span>
                         <img src="./assets/passwordIcon.png" />
-                        <input type="password" name="password" placeholder="Type your password" id="password"  required>
+                        <input type="password" name="password" placeholder="Type your password" id="password"  >
                     </div>
 
 
@@ -83,12 +83,13 @@
                     <tr>
                         <td>Month</td>
                         <td>
-                           <input id = "expenseDate" type="month" required>
+                           <input id = "expenseDate" type="month" >
                         </td>
                     </tr>
                     
                     <tr>
                         <td>Place</td>
+                       
                         <td>
                             <input id="expensePlaceInput" list="expensePlaces" autocomplete="none">
                             <datalist id="expensePlaces"> </datalist>
@@ -96,7 +97,7 @@
                     </tr>
                     
                     <tr>
-                        <td>Category</td>
+                        <td> Category <p> * </p>  </td>
                         <td>
                             <input id="expenseCategoryInput" list="expenseCategories" autocomplete="none">
                             <datalist id="expenseCategories"> </datalist>
@@ -104,16 +105,16 @@
                     </tr>
                     
                     <tr>
-                        <td>Amount</td>
+                        <td>Amount  <p> * </p> </td>
                         <td>
-                            <input id="expenseAmountInput" type="number" name="amount" required>
+                            <input id="expenseAmountInput" type="number" name="amount" >
                         </td>
                     </tr>
                     
                     <tr>
-                        <td>Payment mode</td>
+                        <td>Payment mode  <p> * </p> </td>
                         <td>
-                            <input id="expensePaymentModeInput" list="expensePaymentModes" autocomplete="none" required>
+                            <input id="expensePaymentModeInput" list="expensePaymentModes" autocomplete="none" >
                             <datalist id="expensePaymentModes"> </datalist>
                         </td>
                     </tr>
@@ -133,7 +134,7 @@
                     <tr>
                         <td>Month</td>
                         <td>
-                           <input id="incomeDate" type="month" required>
+                           <input id="incomeDate" type="month" >
                         </td>
                     </tr>
                     <tr>
@@ -145,16 +146,16 @@
                     </tr>
 
                     <tr>
-                        <td>Amount</td>
+                        <td>Amount <p> * </p> </td>
                         <td>
-                            <input id="incomeAmountInput" type="number" name="amount" required> 
+                            <input id="incomeAmountInput" type="number" name="amount" > 
                         </td>
                     </tr>
 
                     <tr>
-                        <td>Payment mode</td>
+                        <td>Payment mode <p> * </p> </td>
                         <td>
-                            <input id="incomePaymentModeInput" list="incomePaymentModes" autocomplete="none" required>
+                            <input id="incomePaymentModeInput" list="incomePaymentModes" autocomplete="none" >
                             <datalist id="incomePaymentModes"> </datalist>
                         </td>
                     </tr>
@@ -175,11 +176,11 @@
                     <tr>
                         <td>Month</td>
                         <td>
-                           <input id="transferenceDate" type="month" required>
+                           <input id="transferenceDate" type="month">
                         </td>
                     </tr>
                     <tr>
-                        <td>Origin</td>
+                        <td>Origin <p> * </p> </td>
                         <td>
                             <input id="transferenceOriginInput" list="transferenceOrigins" autocomplete="none">
                             <datalist id="transferenceOrigins"> </datalist>
@@ -187,14 +188,14 @@
                     </tr>
 
                     <tr>
-                        <td>Amount</td>
+                        <td>Amount <p> * </p> </td>
                         <td>
-                            <input id="transferenceAmountInput" type="number" name="amount" required>
+                            <input id="transferenceAmountInput" type="number" name="amount" >
                         </td>
                     </tr>
 
                     <tr>
-                        <td>Destination</td>
+                        <td>Destination <p> * </p> </td>
                         <td>
                             <input id="transferenceDestintationInput" list="transferenceDestinations" autocomplete="none">
                             <datalist id="transferenceDestinations"> </datalist>
@@ -209,7 +210,7 @@
                 </table>
         </section>
 
-        <section id="oldMonths">
+        <section id="old">
             old
         </section>
 

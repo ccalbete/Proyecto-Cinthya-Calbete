@@ -1,9 +1,9 @@
 main > #home {
     display: none;
-    grid-template-areas: "titleDate titleDate titleDate"
-                         "summarySection . pendingsSection";
+    grid-template-areas: "titleDate titleDate titleDate titleDate"
+                         "summarySection . pendingsSection .";
     grid-template-rows: 1fr 8fr;
-    grid-template-columns: 4fr 2fr 4fr;
+    grid-template-columns: 4fr 2fr 4fr 1fr;
     justify-content: center;
     align-items: center;
     text-align: center;
@@ -13,6 +13,7 @@ main > #home > #titleDate {
     grid-area: titleDate;
     padding: 5px;
     margin-top: 10px;
+    margin-left: 45px;
     font-size: 20px;
     color: white;
 }
@@ -26,7 +27,7 @@ main > #home > #summarySection {
     align-items: center;
     text-align: center;
     height: 400px;
-    width: 400px;
+    width: 700px;
     border-radius: 8px;
     font-size: 1rem;
     color:white;
@@ -63,7 +64,6 @@ main > #home > #pendingsSection {
     background: linear-gradient(292deg, rgba(28,180,218,1) 53%, rgba(6,214,141,1) 84%);
     color: white;
     height: 85%;
-    margin-right: 90px;
     box-shadow: 0px 5px 7px rgba(31, 30, 30, 0.3), 0px 15px 100px rgba(26, 25, 25, 0.3);
     display: grid;
     grid-template-areas: "pendingsSectionTitle pendingsSectionTitle"
@@ -72,6 +72,7 @@ main > #home > #pendingsSection {
     grid-template-columns: 5fr 5fr;
     grid-template-rows: 1fr 1fr;
     margin-top: 65px;
+    width: 100%;
 }
 
 main > #home > #pendingsSection > p {
@@ -98,6 +99,7 @@ main > #home > #pendingsSection > #paidExpenses {
     border-left-style: solid;
     margin-bottom: 40px;
     margin-top: 5px;
+    height: 120px;
 }
 
 main > #home > #pendingsSection > ul {
@@ -110,4 +112,82 @@ main > #home > #pendingsSection > ul > li {
     padding: 5px;
 }
 
+@media (max-width: 1520px) {
+    main > #home > #summarySection {
+        margin-left: 0;
+        height: 325px;
+        width: 0;
+    }
+    main > #home > #summarySection > div {
+        width: 130px;
+        height: 107px;
+    }
+}
+
+@media (max-width: 1250px) {
+    main > #home > #summarySection {
+        margin-left: 0;
+        height: 325px;
+        width: 0;
+    }
+    main > #home > #summarySection > div {
+        width: 110px;
+        height: 103px;
+    }
+    main > #home > #pendingsSection {
+        height: 81%;
+        width: 90%;
+    }
+}
+
+
+@media (max-width: 1030px) {
+    main > #home > #summarySection {
+        margin-left: 0;
+        height: 325px;
+        width: 0;
+    }
+    main > #home > #summarySection > div {
+        width: 90px;
+    }
+    main > #home > #pendingsSection {
+        height: 81%;
+        width: 113%;
+    }
+    main > #home > #summarySection > div > .spent {
+        font-size: 45px;
+    }
+}
+
+@media (max-width: 905px) {
+    main > #home {
+        grid-template-areas: ". titleDate ."
+                             ". summarySection ."
+                             ". pendingsSection .";
+        grid-template-rows: 1fr 3fr 3fr;
+        grid-template-columns: 1fr 8fr 1fr;
+        margin-top: 0;
+    }
+    main > #home > #titleDate {
+        margin-left: 0;
+        margin-right: 70px;
+    }
+    main > #home > #pendingsSection {
+        width: 70%;
+        margin-left: 65px;
+        margin-top: 0;
+    }
+    main > #home > #summarySection {
+        margin-left: 65px;
+        margin-top: 0;
+        margin-bottom: 15px;
+    }
+    main > #home > #pendingsSection > #paidExpenses {
+        height: 38px;
+    }
+    main > #home > #pendingsSection > p {
+        font-size: 25px;
+    }
+    
+}
 

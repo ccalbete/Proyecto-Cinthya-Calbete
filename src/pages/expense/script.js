@@ -24,37 +24,34 @@ function expenseCreateAndFillElements(){
 
 
 function saveExpenseData(){
-    const yearMonthValue = (expenseDateElement.value)
-    const yearValue = yearMonthValue.substr(0,4)
-    const monthValue = yearMonthValue.substr(6,7)
-    const placeValue = expensePlaceInputElement.value;
-    const categoryValue = expenseCategoryInputElement.value;
-    const amountValue = parseInt(expenseAmountInput.value);
-    const paymentModeValue = expensePaymentModeInput.value;
+    //if( !expenseAreThereMissingInputs() ) {
+        const yearMonthValue = (expenseDateElement.value)
+        const yearValue = yearMonthValue.substr(0,4)
+        const monthValue = yearMonthValue.substr(6,7)
+        const placeValue = expensePlaceInputElement.value;
+        const categoryValue = expenseCategoryInputElement.value;
+        const amountValue = parseInt(expenseAmountInput.value);
+        const paymentModeValue = expensePaymentModeInput.value;
 
     
-    // Update property spent of selected category
-    user.categories.forEach(category => {
-        if(category.name === categoryValue){
-            category.spent += amountValue;
-            return;
-        }
-    });
+        // Update property spent of selected category
+        const expenseSelectedCategory = user.categories.find(category => category.name === categoryValue);
+        expenseSelectedCategory.spent += amountValue;
 
-    //Add expense history
-    user.expenses.push(
+        //Add expense history
+        user.expenses.push(
             {
-              year: yearValue,
-              month: monthValue,
-              place: placeValue,
-              category: categoryValue,
-              amount: amountValue,
-              paymentMode: paymentModeValue
-        }
-    ) 
+                year: yearValue,
+                month: monthValue,
+                place: placeValue,
+                category: categoryValue,
+                amount: amountValue,
+                paymentMode: paymentModeValue
+            }
+        )
     
-   expenseClearInputData();
-    
+        expenseClearInputData();
+   // }
 }
 
 function expenseClearInputData() {
@@ -62,4 +59,17 @@ function expenseClearInputData() {
     expenseCategoryInputElement.value = "";
     expenseAmountInput.value = "";
     expensePaymentModeInput.value = "";
+}
+
+function expenseAreThereMissingInputs() {
+    let areMissingFields = false;
+    const expenseInputsRequired = [expenseCategoryInputElement, expenseAmountInput, expensePaymentModeInput];
+
+    expenseInputsRequired.forEach(input => {
+        validateRequiredInput(input);
+    });
+    
+    areMissingFields = anyRequiredInputIsMissing(expenseInputsRequired);
+    
+    return areMissingFields;
 }
