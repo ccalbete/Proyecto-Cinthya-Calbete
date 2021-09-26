@@ -30,7 +30,7 @@ function saveTransferenceData(){
         {
           origin: selectedOrigin,
           amount: transferenceEnteredAmount,
-          paymentMode: selectedDestination,
+          destination: selectedDestination,
         }
     )  
     
