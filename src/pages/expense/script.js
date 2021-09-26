@@ -1,4 +1,4 @@
-const monthElement = document.querySelector('input[type="month"]');
+const expenseDateElement = document.getElementById("expenseDate");
 
 const expensePlaceInputElement = document.getElementById("expensePlaceInput");
 const expensePlacesDataList =  document.getElementById("expensePlaces");
@@ -11,27 +11,20 @@ const expenseAmountInput = document.getElementById("expenseAmountInput");
 const expensePaymentModeInput = document.getElementById("expensePaymentModeInput");
 const expensePaymentModesDataList =  document.getElementById("expensePaymentModes");
 
-
-
-function setCurrentDateByDefault(){
-    const currentDate= new Date()
-    const currentMonth=("0" + (currentDate.getMonth() + 1)).slice(-2)
-    const year=currentDate.getFullYear()
-    monthElement.value = `${year}-${currentMonth}`;
-}
-
-function expenseFillListsValues(){
+function expenseCreateAndFillElements(){
     const categoriesList = user.categories.map(category => category.name)
     const expensePaymentModesList = user.paymentModes.map(paymentMode => paymentMode.name);
 
     fillList(user.places, expensePlacesDataList);
     fillList(categoriesList, expenseCategoriesDataList);
     fillList(expensePaymentModesList, expensePaymentModesDataList);
+
+    setCurrentDateByDefault(expenseDateElement);
 }
 
 
 function saveExpenseData(){
-    const yearMonthValue = (monthElement.value)
+    const yearMonthValue = (expenseDateElement.value)
     const yearValue = yearMonthValue.substr(0,4)
     const monthValue = yearMonthValue.substr(6,7)
     const placeValue = expensePlaceInputElement.value;

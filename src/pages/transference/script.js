@@ -1,3 +1,5 @@
+const transferenceDateElement = document.getElementById("transferenceDate");
+
 const transferenceOriginInput = document.getElementById("transferenceOriginInput");
 const transferenceOriginsDataList = document.getElementById("transferenceOrigins");
 
@@ -6,12 +8,14 @@ const transferenceAmountInput = document.getElementById("transferenceAmountInput
 const transferenceDestintationInput = document.getElementById("transferenceDestintationInput");
 const transferenceDestinationsDataList = document.getElementById("transferenceDestinations");
 
-function transferenceFillListsValues(){
+function transferenceCreateAndFillElements(){
     //Find payment modes name that has property isDebit = true
     const transferencePaymentModesList = ( user.paymentModes.filter(paymentMode => paymentMode.isDebit) ).map(paymentMode => paymentMode.name);
 
     fillList(transferencePaymentModesList, transferenceOriginsDataList);
     fillList(transferencePaymentModesList, transferenceDestinationsDataList);
+
+    setCurrentDateByDefault(transferenceDateElement);
 }
 
 function saveTransferenceData(){

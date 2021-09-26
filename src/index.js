@@ -55,26 +55,30 @@ function createAndFillElements(pageId){
             break;
         
         case "expense":
-
-            setCurrentDateByDefault();
-
             // If places list hasn't options, it means all lists are empty, so fill all lists
-            if (expensePlacesList.innerHTML === " ")  expenseFillListsValues();
+            if (expensePlacesList.innerHTML === " ")  expenseCreateAndFillElements();
 
             break;
         
         case "income":
-
-            if (incomeReasonsList.innerHTML === " ") incomeFillListsValues();
+            
+            if (incomeReasonsList.innerHTML === " ") incomeCreateAndFillElements();
 
             break;
         
         case "transference":
 
-            if(transferenceOriginsList.innerHTML === " ") transferenceFillListsValues();
+            if(transferenceOriginsList.innerHTML === " ") transferenceCreateAndFillElements();
             
             break;
     }
+}
+
+function setCurrentDateByDefault(dateElement){
+    const currentDate= new Date()
+    const currentMonth=("0" + (currentDate.getMonth() + 1)).slice(-2)
+    const year=currentDate.getFullYear()
+    dateElement.value = `${year}-${currentMonth}`;
 }
 
 function fillList(listValues, listElement){

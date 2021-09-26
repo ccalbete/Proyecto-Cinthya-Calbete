@@ -1,3 +1,5 @@
+const incomeDateElement = document.getElementById("incomeDate");
+
 const incomeReasonsInput = document.getElementById("incomeReasonInput");
 const incomeReasonsDataList = document.getElementById("incomeReasons");
 
@@ -7,15 +9,20 @@ const incomePaymentModeInput = document.getElementById("incomePaymentModeInput")
 const incomePaymentModesDataList = document.getElementById("incomePaymentModes");
 
 
-function incomeFillListsValues(){
+function incomeCreateAndFillElements(){
     //Find payment modes name that has property isDebit = true
     const incomepaymentModesList = ( user.paymentModes.filter(paymentMode => paymentMode.isDebit) ).map(paymentMode => paymentMode.name);
 
     fillList(user.reasons, incomeReasonsDataList);
     fillList(incomepaymentModesList, incomePaymentModesDataList);
+
+    setCurrentDateByDefault(incomeDateElement);
 }
 
 function saveIncomeData(){
+    const yearMonthValue = (incomeDateElement.value)
+    const yearValue = yearMonthValue.substr(0,4)
+    const monthValue = yearMonthValue.substr(6,7)
     const incomeSelectedPaymentMode = incomePaymentModeInput.value;
     const incomeEnteredAmount = parseInt(incomeAmountInput.value);
 
@@ -25,9 +32,11 @@ function saveIncomeData(){
     //Save income history 
     user.incomes.push(
         {
-          reason: incomeReasonsInput.value,
-          amount: incomeEnteredAmount,
-          paymentMode: incomeSelectedPaymentMode,
+            year: yearValue,
+            month: monthValue,
+            reason: incomeReasonsInput.value,
+            amount: incomeEnteredAmount,
+            paymentMode: incomeSelectedPaymentMode,
         }
     )  
 
