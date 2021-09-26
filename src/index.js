@@ -89,3 +89,7 @@ function fillList(listValues, listElement){
         option.value = value;
     });
 }
+
+function getUserDebitPaymentModes() {
+    return (user.paymentModes.filter(paymentMode => paymentMode.isDebit) ).map(paymentMode => paymentMode.name);
+}

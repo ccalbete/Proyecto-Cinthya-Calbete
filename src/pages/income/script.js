@@ -10,8 +10,7 @@ const incomePaymentModesDataList = document.getElementById("incomePaymentModes")
 
 
 function incomeCreateAndFillElements(){
-    //Find payment modes name that has property isDebit = true
-    const incomepaymentModesList = ( user.paymentModes.filter(paymentMode => paymentMode.isDebit) ).map(paymentMode => paymentMode.name);
+    const incomepaymentModesList = getUserDebitPaymentModes()
 
     fillList(user.reasons, incomeReasonsDataList);
     fillList(incomepaymentModesList, incomePaymentModesDataList);

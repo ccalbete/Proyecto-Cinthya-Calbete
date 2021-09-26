@@ -9,8 +9,7 @@ const transferenceDestintationInput = document.getElementById("transferenceDesti
 const transferenceDestinationsDataList = document.getElementById("transferenceDestinations");
 
 function transferenceCreateAndFillElements(){
-    //Find payment modes name that has property isDebit = true
-    const transferencePaymentModesList = ( user.paymentModes.filter(paymentMode => paymentMode.isDebit) ).map(paymentMode => paymentMode.name);
+    const transferencePaymentModesList = getUserDebitPaymentModes()
 
     fillList(transferencePaymentModesList, transferenceOriginsDataList);
     fillList(transferencePaymentModesList, transferenceDestinationsDataList);
