@@ -30,20 +30,17 @@ function homeCreateAndFillElements() {
 
 function fillPendingsList() {
 
-    for(let i=0; i < user.categories.length; i++) {
-
-        if(user.categories[i].isFixed) {
+    user.categories.forEach(category => {
+        if(category.isFixed) {
             const listItem = document.createElement("li");
-            listItem.textContent = user.categories[i].name;
-            if(user.categories[i].spent > 0) {
+            listItem.textContent = category.name;
+            if(category.spent > 0) {
                 paidExpensesElement.appendChild(listItem);
             } else {
                 pendingExpensesElement.appendChild(listItem);
             }
         }
-        
-        
-    }
+    });
 }
 
 function fillSummarySection() {
