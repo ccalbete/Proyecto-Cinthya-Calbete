@@ -24,7 +24,6 @@ function expenseCreateAndFillElements(){
 
 
 function saveExpenseData(){
-    //if( !expenseAreThereMissingInputs() ) {
         const yearMonthValue = (expenseDateElement.value)
         const yearValue = yearMonthValue.substr(0,4)
         const monthValue = yearMonthValue.substr(6,7)
@@ -51,7 +50,6 @@ function saveExpenseData(){
         )
     
         expenseClearInputData();
-   // }
 }
 
 function expenseClearInputData() {
@@ -59,17 +57,4 @@ function expenseClearInputData() {
     expenseCategoryInputElement.value = "";
     expenseAmountInput.value = "";
     expensePaymentModeInput.value = "";
-}
-
-function expenseAreThereMissingInputs() {
-    let areMissingFields = false;
-    const expenseInputsRequired = [expenseCategoryInputElement, expenseAmountInput, expensePaymentModeInput];
-
-    expenseInputsRequired.forEach(input => {
-        validateRequiredInput(input);
-    });
-    
-    areMissingFields = anyRequiredInputIsMissing(expenseInputsRequired);
-    
-    return areMissingFields;
 }
