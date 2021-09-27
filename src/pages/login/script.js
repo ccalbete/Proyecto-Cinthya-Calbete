@@ -11,3 +11,8 @@ function login(){
        errorMessage.style.display = "block";
     }
 }
+
+function loginClearInputData() {
+    username.value="";
+    password.value="";
+}

@@ -37,6 +37,9 @@ function createAndFillElements(pageId){
 
     switch(pageId) {
 
+        case "login":
+            loginClearInputData();
+
         case "home":
 
             if (summarySection.getElementsByTagName('div').length >= 1) {

@@ -28,9 +28,9 @@ function homeCreateAndFillElements() {
 }
 
 
-function fillPendingsList(){
+function fillPendingsList() {
 
-    for(let i=0; i < user.categories.length; i++){
+    for(let i=0; i < user.categories.length; i++) {
 
         if(user.categories[i].isFixed) {
             const listItem = document.createElement("li");

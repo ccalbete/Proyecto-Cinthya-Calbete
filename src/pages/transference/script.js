@@ -19,11 +19,14 @@ function transferenceCreateAndFillElements(){
 
 function saveTransferenceData(){
     const selectedOrigin = transferenceOriginInput.value;
-    const transferenceEnteredAmount = transferenceAmountInput.value;
+    const transferenceEnteredAmount = parseInt(transferenceAmountInput.value);
     const selectedDestination = transferenceDestintationInput.value;
 
     user.paymentModes.find(paymentMode => paymentMode.name === selectedOrigin).available -= transferenceEnteredAmount;
     user.paymentModes.find(paymentMode => paymentMode.name === selectedDestination).available += transferenceEnteredAmount;
+
+    console.log("origin " + user.paymentModes.find(paymentMode => paymentMode.name === selectedOrigin).available);
+    console.log("destination "+user.paymentModes.find(paymentMode => paymentMode.name === selectedDestination).available)
 
     //Save transference history 
     user.transferences.push(
