@@ -15,4 +15,5 @@ function login(){
 function loginClearInputData() {
     username.value="";
     password.value="";
+    errorMessage.style.display = "none";
 }
