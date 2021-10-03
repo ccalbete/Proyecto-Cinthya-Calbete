@@ -1,0 +1,203 @@
+:root {
+    --background-header-footer: #337AC1;
+    --background-color-blue: #045c8a;
+    --background-image-color: #3798B8;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    font-family: 'Urbanist', sans-serif;
+}
+
+body {
+    display: grid;
+    grid-template-areas:    "header"
+                            "main"
+                            "footer";
+    grid-template-rows: 0.8fr 12fr 0.5fr; 
+    height: 100vh;
+    background-color: lightblue;
+}
+
+header {
+    display: none;
+    grid-area: header;
+    background-color: var(--background-header-footer);
+    color: white;
+    justify-content: center;
+}
+
+header > nav > ul {
+    list-style: none;
+}
+
+header > nav > ul > li {
+    display: inline-block;
+    width: 10%;
+    height: 40px;
+    line-height: 40px;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    text-align: center;
+    z-index: 1;
+    transition: 0.5s;
+    font-size: 13px; 
+    padding-top: 5px;
+    margin: 10px 10px 10px 0;
+    box-shadow: 0px 15px 40px var(--background-image-color);
+    color: white;
+    cursor: pointer;
+}
+
+header > nav > ul > li:hover {
+    background: rgba(0,0,0,0.1); 
+}
+
+header > nav > ul > .userSection {
+    position: fixed;
+    display: inline-block;
+    cursor: pointer;
+    top: 24px;  
+    right: 30px;
+}
+
+header > nav > ul > .userSection > img {
+    width: 48px;
+    height: 48px;
+}
+
+header > nav > ul > .userSection > a {
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    border-radius: 5px;
+}
+
+header > nav > ul > .userSection > a {
+    color: black;
+    padding: 10px 5px;
+    text-decoration: none;
+}
+
+header > nav > ul > .userSection:hover a {
+    display: block;
+}
+
+main {
+    grid-area: main;
+}
+
+main > section {
+    display: none;
+    grid-template-areas: "form";
+    justify-content: center;
+    margin-top: 35px;
+}
+
+main > section > form {
+    grid-area: form;
+    display: grid;
+    background-color: white;
+    width: 450px;
+    justify-content: center;
+    align-items: center;
+    justify-items: center;
+    border-radius: 8px;
+    box-shadow: 0px 5px 7px rgba(0,0,0,.3), 0px 15px 100px rgba(0,0,0,.3);
+}
+
+main > section > form > p {
+    text-align: center;
+    font-size: 30px;
+    margin-top: 40px;
+    margin-bottom: 33px;
+}
+
+main > section > form > table > tbody > tr > td {
+    padding: 15px 10px;
+}
+
+
+main > section > form > table > tbody > tr > td > button, main > section > form > button{
+    border-radius: 6px;
+    size: 40px;
+    width: 250px;
+    height: 50px;
+    padding: 7px;   
+    margin-top: 55px;
+    margin-bottom: 45px;
+    margin-left: 20px;
+    display: block;
+    cursor: pointer;
+    background-color: var(--background-color-blue);
+    color: white;
+    border-color: white;
+}
+
+main > section > form > table > tbody > tr > td > input {
+    height: 30px;
+    width: 165px;
+    font-size: 12px;
+    text-align: center;
+}
+
+main > section > form > table > tbody > tr > td > p {
+    display: inline;
+    padding-left: 4px;
+    color: red;
+}
+
+main > section > form > table > tbody > tr > td > .errorInputRequired {
+    border: 1px solid;
+    border-color: red;
+}
+
+main > section > form > table > tbody > tr > td > input:focus,  main > section > form > div > input:focus{
+    outline: none;
+}
+
+main > section > form > table > tbody > tr > td > input::-webkit-input-placeholder,  main > section > form > div > input::-webkit-input-placeholder{
+    font-size: 13px;
+}
+
+main > section > form > table > tbody > tr > td > input::-webkit-calendar-picker-indicator, main > section > form > div > input::-webkit-calendar-picker-indicator {
+    opacity: 100;
+}
+
+main > section > form > table > tbody > tr > td > input:-webkit-autofill,
+main > section > form > table > tbody > tr > td > input:-webkit-autofill:hover,
+main > section > form > table > tbody > tr > td > input:-webkit-autofill:focus,
+main > section > form > table > tbody > tr > td > input:-webkit-autofill:active,
+main > section > form > div > input:-webkit-autofill,
+main > section > form > div > input:-webkit-autofill:hover,
+main > section > form > div > input:-webkit-autofill:focus,
+main > section > form > div > input:-webkit-autofill:active {
+    transition: background-color 5000000s ease-in-out 0s;
+}
+
+footer {
+    grid-area: footer;
+    text-align: center;
+}
+
+header, main, footer {
+    padding: 15px 30px;
+}
+
+@media (max-width: 1350px) {
+    header > nav > ul > li {
+        margin-left: 20px;
+    }
+}
+
+@media (max-width: 905px) {
+    header > nav > ul > li {
+      padding-right: 12px;
+      padding-left: 8px;
+    }
+}
+
+
+

@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./index.css">
+    <link rel="stylesheet" href="./pages/login/style.css">
+    <link rel="stylesheet" href="./pages/home/style.css">
+    <link rel="stylesheet" href="./pages/expense/style.css">
+    <script src="https://kit.fontawesome.com/ad5342c132.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Urbanist&display=swap" rel="stylesheet">
+    <link rel="icon" href="./assets/favicon.png" type="image/x-icon">
+    <title>Document</title>
+</head>
+<body onload="displayPage('login')">
+   <header>
+        <nav>
+            <ul>
+                <li onclick="displayPage('home')">Home</li>
+                <li onclick="displayPage('expense')">Expense</li>
+                <li onclick="displayPage('income')">Income</li>
+                <li onclick="displayPage('transference')">Transfer</li>
+                <div class="userSection">
+                    <img id="userImage" src="./assets/userIconHome.svg"/>
+                    <a onclick="displayPage('login')">Logout</a>
+                </div>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        
+        <section id="login">
+             <form id="loginForm">
+                <p>Login</p>
+                    <div>
+                        <span>Username:</span>
+                        <img src="./assets/userIconLogin.png" />
+                        <input type="text" name="username"  id="username" placeholder="Type your username"  > 
+                    </div>
+
+                    <div>
+                        <span>Password:</span>
+                        <img src="./assets/passwordIcon.png" />
+                        <input type="password" name="password" placeholder="Type your password" id="password"  >
+                    </div>
+
+
+                    <button type="button" name="confirm" id="confirmButton" onclick="login()">Confirm</button>
+
+                <p id="errorMessageLogin">Error: Wrong username or password</p>
+            </form>
+        </section>
+
+        <section id="home">
+
+            <p id="titleDate"></p>   
+
+            <article id="summarySection">
+            </article>
+            <article id=pendingsSection>
+                <p>Fixed expenses</p>
+
+                <h4 class="pendingExpensesTitle">TO DO: </h4>
+                <ul id="pendingExpenses"> </ul>
+
+                <h4 class="doneExpensesTitle">DONE: </h4>
+                <ul id="paidExpenses"> </ul>
+            </article>
+
+        </section>
+
+        <section id="expense">
+            <form id="expenseForm">
+                <p>Add expense</p>
+                <table>
+                    <tr>
+                        <td>Month</td>
+                        <td>
+                           <input id = "expenseDate" type="month" >
+                        </td>
+                    </tr>
+                    
+                    <tr>
+                        <td>Place</td>
+                       
+                        <td>
+                            <input id="expensePlaceInput" list="expensePlaces" autocomplete="none">
+                            <datalist id="expensePlaces"> </datalist>
+                        </td>
+                    </tr>
+                    
+                    <tr>
+                        <td> Category <p> * </p>  </td>
+                        <td>
+                            <input id="expenseCategoryInput" list="expenseCategories" autocomplete="none">
+                            <datalist id="expenseCategories"> </datalist>
+                        </td>
+                    </tr>
+                    
+                    <tr>
+                        <td>Amount  <p> * </p> </td>
+                        <td>
+                            <input id="expenseAmountInput" type="number" name="amount" >
+                        </td>
+                    </tr>
+                    
+                    <tr>
+                        <td>Payment mode  <p> * </p> </td>
+                        <td>
+                            <input id="expensePaymentModeInput" list="expensePaymentModes" autocomplete="none" >
+                            <datalist id="expensePaymentModes"> </datalist>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            <button type="button"  onclick="saveExpenseData()">Save</button>
+                        </td>
+                    </tr>
+                </table>
+            </form>
+        </section>
+
+        <section id="income">
+            <form id="incomeForm">
+                <p>Add income</p>  
+                <table>
+                    <tr>
+                        <td>Month</td>
+                        <td>
+                           <input id="incomeDate" type="month" >
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Reason</td>
+                        <td>
+                            <input id="incomeReasonInput" list="incomeReasons" autocomplete="none">
+                            <datalist id="incomeReasons"> </datalist>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>Amount <p> * </p> </td>
+                        <td>
+                            <input id="incomeAmountInput" type="number" name="amount" > 
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>Payment mode <p> * </p> </td>
+                        <td>
+                            <input id="incomePaymentModeInput" list="incomePaymentModes" autocomplete="none" >
+                            <datalist id="incomePaymentModes"> </datalist>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td colspan="2">
+                            <button type="button" onclick="saveIncomeData()">Save</button>
+                        </td>
+                    </tr>
+                </table>
+            </form> 
+        </section>
+
+        <section id="transference">
+            <form id="transferenceForm">
+                <p>Transfer between accounts</p>  
+                <table>
+                    <tr>
+                        <td>Month</td>
+                        <td>
+                           <input id="transferenceDate" type="month">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Origin <p> * </p> </td>
+                        <td>
+                            <input id="transferenceOriginInput" list="transferenceOrigins" autocomplete="none">
+                            <datalist id="transferenceOrigins"> </datalist>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>Amount <p> * </p> </td>
+                        <td>
+                            <input id="transferenceAmountInput" type="number" name="amount" >
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>Destination <p> * </p> </td>
+                        <td>
+                            <input id="transferenceDestintationInput" list="transferenceDestinations" autocomplete="none">
+                            <datalist id="transferenceDestinations"> </datalist>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td colspan="2">
+                            <button type="button"  onclick="saveTransferenceData()">Save</button>
+                        </td>
+                    </tr>
+                </table>
+        </section>
+        
+    </main>
+
+    <footer>
+        &copy; Copyright 2021, Cinthya Calbete. All rights reserved. 
+    </footer>
+    <script src="data/users.js"></script>
+    <script src="./pages/expense/script.js"></script>
+    <script src="./pages/income/script.js"></script>
+    <script src="./pages/transference/script.js"></script>
+    <script src="./pages/home/script.js"></script>
+    <script src="index.js"></script>
+    <script src="./pages/login/script.js"></script>
+</body>
+</html>
