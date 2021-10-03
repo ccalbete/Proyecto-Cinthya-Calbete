@@ -1,3 +1,5 @@
+const expenseForm = document.getElementById("expenseForm");
+
 const expenseDateElement = document.getElementById("expenseDate");
 
 const expensePlaceInputElement = document.getElementById("expensePlaceInput");
@@ -49,12 +51,5 @@ function saveExpenseData(){
             }
         )
     
-        expenseClearInputData();
-}
-
-function expenseClearInputData() {
-    expensePlaceInputElement.value = "";
-    expenseCategoryInputElement.value = "";
-    expenseAmountInput.value = "";
-    expensePaymentModeInput.value = "";
+        resetForm(expenseForm, expenseDateElement);
 }

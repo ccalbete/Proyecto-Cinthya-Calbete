@@ -1,3 +1,5 @@
+const transferenceForm = document.getElementById("transferenceForm");
+
 const transferenceDateElement = document.getElementById("transferenceDate");
 
 const transferenceOriginInput = document.getElementById("transferenceOriginInput");
@@ -37,11 +39,5 @@ function saveTransferenceData(){
         }
     )  
     
-    transferenceClearInputData();
-}
-
-function transferenceClearInputData() {
-    transferenceOriginInput.value="";
-    transferenceAmountInput.value="";
-    transferenceDestintationInput.value="";
+    resetForm(transferenceForm, transferenceDateElement);
 }

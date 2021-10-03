@@ -57,7 +57,7 @@ function createAndFillElements(pageId){
         
         case "expense":
 
-            expenseClearInputData();
+            resetForm(expenseForm, expenseDateElement);
 
             // If places list hasn't options, it means all lists are empty, so fill all lists
             if (expensePlacesList.innerHTML === " ")  expenseCreateAndFillElements();
@@ -66,7 +66,7 @@ function createAndFillElements(pageId){
         
         case "income":
 
-            incomeClearInputData();
+            resetForm(incomeForm, incomeDateElement);
 
             if (incomeReasonsList.innerHTML === " ") incomeCreateAndFillElements();
 
@@ -74,12 +74,17 @@ function createAndFillElements(pageId){
         
         case "transference":
 
-            transferenceClearInputData()
+            resetForm(transferenceForm, transferenceDateElement);
 
             if(transferenceOriginsList.innerHTML === " ") transferenceCreateAndFillElements();
             
             break;
     }
+}
+
+function resetForm(formElement, dateElement){
+    formElement.reset();
+    setCurrentDateByDefault(dateElement);
 }
 
 function setCurrentDateByDefault(dateElement){
@@ -103,13 +108,3 @@ function getUserDebitPaymentModes() {
     return (user.paymentModes.filter(paymentMode => paymentMode.isDebit) ).map(paymentMode => paymentMode.name);
 }
 
-// Returns true to know if the css class was assigned to the input
-function validateRequiredInput(input) {
-    if(input.value === "") {
-        input.classList.add("errorInputRequired");
-    }
-} 
-
-function anyRequiredInputIsMissing(requiredInputList) {
-    return requiredInputList.some(input => input.classList.contains("errorInputRequired"));
-}

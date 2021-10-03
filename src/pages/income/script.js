@@ -1,3 +1,5 @@
+const incomeForm = document.getElementById("incomeForm");
+
 const incomeDateElement = document.getElementById("incomeDate");
 
 const incomeReasonsInput = document.getElementById("incomeReasonInput");
@@ -39,12 +41,5 @@ function saveIncomeData(){
         }
     )  
     
-    incomeClearInputData();
+    resetForm(incomeForm, incomeDateElement);
 }
-
-function incomeClearInputData() {
-    incomeReasonsInput.value="";
-    incomeAmountInput.value="";
-    incomePaymentModeInput.value="";
-}
-
