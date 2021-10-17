@@ -4,14 +4,14 @@ function displayPage(pageId) {
     const header = document.getElementsByTagName("header")[0];
     hideSections();
 
-    if(pageId === "login") {
+    if (pageId === "login") {
         header.style.display = "none";
         document.getElementById(pageId).style.display = "grid";
-    } else if(!!user) {
+    } else if (!!user) {
         header.style.display = "block";
         document.getElementById(pageId).style.display = "grid";
     } else {
-        displayPage("login");  
+        displayPage("login");
     }
     createAndFillElements(pageId);
 }
@@ -26,8 +26,8 @@ function hideSections() {
 }
 
 // Checks if elements page were created before creating it, to avoid duplicate data
-function createAndFillElements(pageId){
-    
+function createAndFillElements(pageId) {
+
     const summarySection = document.getElementById('summarySection');
     const toDoListPendingsSection = document.getElementById('pendingExpenses');
     const doneListPendingsSection = document.getElementById('paidExpenses');
@@ -35,7 +35,7 @@ function createAndFillElements(pageId){
     const incomeReasonsList = document.getElementById('incomeReasons');
     const transferenceOriginsList = document.getElementById('transferenceOrigins');
 
-    switch(pageId) {
+    switch (pageId) {
 
         case "login":
             loginClearInputData();
@@ -43,27 +43,27 @@ function createAndFillElements(pageId){
         case "home":
 
             if (summarySection.getElementsByTagName('div').length >= 1) {
-                summarySection.innerHTML="";
+                summarySection.innerHTML = "";
             }
             // If items to do list are created, it means items done list too, so remove it to update it
             if (toDoListPendingsSection.getElementsByTagName("li").length >= 1) {
-                toDoListPendingsSection.innerHTML="";
-                doneListPendingsSection.innerHTML="";
+                toDoListPendingsSection.innerHTML = "";
+                doneListPendingsSection.innerHTML = "";
             }
 
             homeCreateAndFillElements();
 
             break;
-        
+
         case "expense":
 
             resetForm(expenseForm, expenseDateElement);
 
             // If places list hasn't options, it means all lists are empty, so fill all lists
-            if (expensePlacesList.innerHTML === " ")  expenseCreateAndFillElements();
+            if (expensePlacesList.innerHTML === " ") expenseCreateAndFillElements();
 
             break;
-        
+
         case "income":
 
             resetForm(incomeForm, incomeDateElement);
@@ -71,30 +71,31 @@ function createAndFillElements(pageId){
             if (incomeReasonsList.innerHTML === " ") incomeCreateAndFillElements();
 
             break;
-        
+
         case "transference":
 
             resetForm(transferenceForm, transferenceDateElement);
 
-            if(transferenceOriginsList.innerHTML === " ") transferenceCreateAndFillElements();
-            
+            if (transferenceOriginsList.innerHTML === " ") transferenceCreateAndFillElements();
+
             break;
     }
 }
 
-function resetForm(formElement, dateElement){
+// All the inputs of the form passed by parameter are emptied, but the date is not left empty
+function resetForm(formElement, dateElement) {
     formElement.reset();
     setCurrentDateByDefault(dateElement);
 }
 
-function setCurrentDateByDefault(dateElement){
-    const currentDate= new Date()
-    const currentMonth=("0" + (currentDate.getMonth() + 1)).slice(-2)
-    const year=currentDate.getFullYear()
+function setCurrentDateByDefault(dateElement) {
+    const currentDate = new Date()
+    const currentMonth = ("0" + (currentDate.getMonth() + 1)).slice(-2)
+    const year = currentDate.getFullYear()
     dateElement.value = `${year}-${currentMonth}`;
 }
 
-function fillList(listValues, listElement){
+function fillList(listValues, listElement) {
 
     listValues.forEach(value => {
         const option = document.createElement("option");
@@ -103,8 +104,8 @@ function fillList(listValues, listElement){
     });
 }
 
- // Find payment modes name that has property isDebit = true
+// Find payment modes name that has property isDebit = true
 function getUserDebitPaymentModes() {
-    return (user.paymentModes.filter(paymentMode => paymentMode.isDebit) ).map(paymentMode => paymentMode.name);
+    return (user.paymentModes.filter(paymentMode => paymentMode.isDebit)).map(paymentMode => paymentMode.name);
 }
 
