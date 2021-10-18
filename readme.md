@@ -17,7 +17,8 @@ Google chrome, html, css and javascript vanilla
 
 ### Installing
 
-https://github.com/ccalbete/Proyecto-Cinthya-Calbete
+https://github.com/ccalbete/front-manage-your-movements
+
 
 ### Executing program
 
