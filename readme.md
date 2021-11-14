@@ -19,6 +19,12 @@ Google chrome, html, css and javascript vanilla
 
 https://github.com/ccalbete/front-manage-your-movements
 
+### Settings
+A file settings.js is required in the root of the project with the base url of backend. (the port must match with the port configured in frontend repository, in this case 3000)
+
+```js
+const url = "http://localhost:3000";
+```
 
 ### Executing program
 
