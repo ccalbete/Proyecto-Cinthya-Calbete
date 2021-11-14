@@ -30,7 +30,7 @@ function homeCreateAndFillElements() {
 
 function fillPendingsList() {
 
-    getFixedExpensesByUser().then((userFixedExpenses) => {
+    getUserFixedExpenses().then((userFixedExpenses) => {
         userFixedExpenses.forEach(fixedExpense => {
             const listItem = document.createElement("li");
             listItem.textContent = fixedExpense.name;
@@ -48,7 +48,7 @@ function fillSummarySection() {
     const SKYBLUE = "skyblue";
     let lastColor = SKYBLUE;
 
-    getCategoriesByUser().then((userCategories) => {
+    getUserCategories().then((userCategories) => {
         for (let i = 0; i < userCategories.length; i++) {
 
             let categoryItemsGrouper = document.createElement("div");
@@ -80,30 +80,3 @@ function showTitleCurrentMonth() {
     titleDateElement.textContent = months[currentDate.getMonth()] + " " + currentDate.getFullYear()
 }
 
-function getCategoriesByUser() {
-    return fetch(url + "/categories/" + user, {
-        method: "GET",
-        headers: {
-            "Content-Type": "application/json",
-            "auth-token": localStorage.getItem("token"),
-        }
-    }).then(function (response) {
-        return response.json();
-    }).then(function (response) {
-        return response.userCategories;
-    })
-}
-
-function getFixedExpensesByUser() {
-    return fetch(url + "/fixedExpenses/" + user, {
-        method: "GET",
-        headers: {
-            "Content-Type": "application/json",
-            "auth-token": localStorage.getItem("token"),
-        }
-    }).then(function (response) {
-        return response.json();
-    }).then(function (response) {
-        return response.userFixedExpenses;
-    })
-}

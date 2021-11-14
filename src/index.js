@@ -118,3 +118,46 @@ function getUserDebitPaymentModes() {
         return response.debitPaymentModes;
     })
 };
+
+function getUserReasons() {
+    return fetch(url + "/reasons/" + user, {
+        method: "GET",
+        headers: {
+            "Content-Type": "application/json",
+            "auth-token": localStorage.getItem("token"),
+        }
+    }).then(function (response) {
+        return response.json();
+    }).then(function (response) {
+        return response.userReasons;
+    })
+};
+
+
+function getUserCategories() {
+    return fetch(url + "/categories/" + user, {
+        method: "GET",
+        headers: {
+            "Content-Type": "application/json",
+            "auth-token": localStorage.getItem("token"),
+        }
+    }).then(function (response) {
+        return response.json();
+    }).then(function (response) {
+        return response.userCategories;
+    })
+}
+
+function getUserFixedExpenses() {
+    return fetch(url + "/fixedExpenses/" + user, {
+        method: "GET",
+        headers: {
+            "Content-Type": "application/json",
+            "auth-token": localStorage.getItem("token"),
+        }
+    }).then(function (response) {
+        return response.json();
+    }).then(function (response) {
+        return response.userFixedExpenses;
+    })
+}

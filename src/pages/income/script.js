@@ -11,35 +11,39 @@ const incomePaymentModeInput = document.getElementById("incomePaymentModeInput")
 const incomePaymentModesDataList = document.getElementById("incomePaymentModes");
 
 
-function incomeCreateAndFillElements(){
-    const incomepaymentModesList = getUserDebitPaymentModes()
+function incomeCreateAndFillElements() {
 
-    fillList(user.reasons, incomeReasonsDataList);
-    fillList(incomepaymentModesList, incomePaymentModesDataList);
+    getUserDebitPaymentModes().then(incomepaymentModesList => {
+        fillList(incomepaymentModesList, incomePaymentModesDataList);
+    });
+
+    getUserReasons().then(incomeReasonsList => {
+        fillList(incomeReasonsList, incomeReasonsDataList);
+    });
 
     setCurrentDateByDefault(incomeDateElement);
 }
 
-function saveIncomeData(){
-    const yearMonthValue = (incomeDateElement.value)
-    const yearValue = yearMonthValue.substr(0,4)
-    const monthValue = yearMonthValue.substr(6,7)
-    const incomeSelectedPaymentMode = incomePaymentModeInput.value;
-    const incomeEnteredAmount = parseInt(incomeAmountInput.value);
+function saveIncomeData() {
+    const yearMonthValue = (incomeDateElement.value);
 
-    // Find selected user payment mode and add entered amount 
-    user.paymentModes.find(paymentMode => paymentMode.name === incomeSelectedPaymentMode).available += incomeEnteredAmount;
+    fetch(url + "/incomes", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json",
+            "auth-token": localStorage.getItem("token"),
+        },
+        body: JSON.stringify({
+            "date": incomeDateElement.value,
+            "reason": incomeReasonsInput.value,
+            "amount": parseInt(incomeAmountInput.value),
+            "paymentMode": incomePaymentModeInput.value
+        })
+    }).then(function (response) {
+        return response.json();
+    }).then(function (response) {
+        return response.success;
+    })
 
-    //Save income history 
-    user.incomes.push(
-        {
-            year: yearValue,
-            month: monthValue,
-            reason: incomeReasonsInput.value,
-            amount: incomeEnteredAmount,
-            paymentMode: incomeSelectedPaymentMode,
-        }
-    )  
-    
     resetForm(incomeForm, incomeDateElement);
 }
