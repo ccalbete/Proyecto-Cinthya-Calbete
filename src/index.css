@@ -149,11 +149,6 @@ main > section > form > table > tbody > tr > td > p {
     color: red;
 }
 
-main > section > form > table > tbody > tr > td > .errorInputRequired {
-    border: 1px solid;
-    border-color: red;
-}
-
 main > section > form > table > tbody > tr > td > input:focus,  main > section > form > div > input:focus{
     outline: none;
 }
