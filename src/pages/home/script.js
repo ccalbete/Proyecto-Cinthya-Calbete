@@ -30,7 +30,7 @@ function homeCreateAndFillElements() {
 
 function fillPendingsList() {
 
-    getUserFixedExpenses().then((userFixedExpenses) => {
+    getUserFixedExpensesCategories().then((userFixedExpenses) => {
         userFixedExpenses.forEach(fixedExpense => {
             const listItem = document.createElement("li");
             listItem.textContent = fixedExpense.name;
@@ -48,7 +48,7 @@ function fillSummarySection() {
     const SKYBLUE = "skyblue";
     let lastColor = SKYBLUE;
 
-    getUserCategories().then((userCategories) => {
+    getUserNotFixedExpensesCategories().then((userCategories) => {
         for (let i = 0; i < userCategories.length; i++) {
 
             let categoryItemsGrouper = document.createElement("div");

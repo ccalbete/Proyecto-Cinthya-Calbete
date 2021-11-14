@@ -161,8 +161,8 @@ function getUserCategories() {
     })
 }
 
-function getUserFixedExpenses() {
-    return fetch(url + "/fixedExpenses/" + user, {
+function getUserFixedExpensesCategories() {
+    return fetch(url + "/categories/" + user + "/fixedExpenses", {
         method: "GET",
         headers: {
             "Content-Type": "application/json",
@@ -171,7 +171,21 @@ function getUserFixedExpenses() {
     }).then(function (response) {
         return response.json();
     }).then(function (response) {
-        return response.userFixedExpenses;
+        return response.userFixedExpensesCategories;
+    })
+}
+
+function getUserNotFixedExpensesCategories() {
+    return fetch(url + "/categories/" + user + "/notFixedExpenses", {
+        method: "GET",
+        headers: {
+            "Content-Type": "application/json",
+            "auth-token": localStorage.getItem("token"),
+        }
+    }).then(function (response) {
+        return response.json();
+    }).then(function (response) {
+        return response.userNotFixedExpensesCategories;
     })
 }
 
