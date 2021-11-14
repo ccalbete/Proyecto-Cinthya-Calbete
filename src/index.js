@@ -104,9 +104,8 @@ function fillList(listValues, listElement) {
     });
 }
 
-// Returns a promise with the user's list of payment modes names
-function getUserDebitPaymentModes() {
-    return fetch(url + "/paymentModes/debit/" + user, {
+function getUserPaymentModes() {
+    return fetch(url + "/paymentModes/" + user, {
         method: "GET",
         headers: {
             "Content-Type": "application/json",
@@ -115,7 +114,22 @@ function getUserDebitPaymentModes() {
     }).then(function (response) {
         return response.json();
     }).then(function (response) {
-        return response.debitPaymentModes;
+        return response.userPaymentModes;
+    })
+}
+
+// Returns a promise with the user's list of payment modes names
+function getUserDebitPaymentModesNames() {
+    return fetch(url + "/paymentModes/debit/" + user + "/names", {
+        method: "GET",
+        headers: {
+            "Content-Type": "application/json",
+            "auth-token": localStorage.getItem("token"),
+        }
+    }).then(function (response) {
+        return response.json();
+    }).then(function (response) {
+        return response.debitPaymentModesNames;
     })
 };
 
@@ -133,6 +147,19 @@ function getUserReasons() {
     })
 };
 
+function getUserCategoriesNames() {
+    return fetch(url + "/categories/" + user + "/names", {
+        method: "GET",
+        headers: {
+            "Content-Type": "application/json",
+            "auth-token": localStorage.getItem("token"),
+        }
+    }).then(function (response) {
+        return response.json();
+    }).then(function (response) {
+        return response.userCategoriesNames;
+    })
+}
 
 function getUserCategories() {
     return fetch(url + "/categories/" + user, {
@@ -159,5 +186,19 @@ function getUserFixedExpenses() {
         return response.json();
     }).then(function (response) {
         return response.userFixedExpenses;
+    })
+}
+
+function getUserPlaces() {
+    return fetch(url + "/places/" + user, {
+        method: "GET",
+        headers: {
+            "Content-Type": "application/json",
+            "auth-token": localStorage.getItem("token"),
+        }
+    }).then(function (response) {
+        return response.json();
+    }).then(function (response) {
+        return response.userPlaces;
     })
 }

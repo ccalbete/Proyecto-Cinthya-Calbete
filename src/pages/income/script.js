@@ -13,8 +13,8 @@ const incomePaymentModesDataList = document.getElementById("incomePaymentModes")
 
 function incomeCreateAndFillElements() {
 
-    getUserDebitPaymentModes().then(incomepaymentModesList => {
-        fillList(incomepaymentModesList, incomePaymentModesDataList);
+    getUserDebitPaymentModesNames().then(incomePaymentModesList => {
+        fillList(incomePaymentModesList, incomePaymentModesDataList);
     });
 
     getUserReasons().then(incomeReasonsList => {
