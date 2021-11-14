@@ -104,8 +104,17 @@ function fillList(listValues, listElement) {
     });
 }
 
-// Find payment modes name that has property isDebit = true
+// Returns a promise with the user's list of payment modes names
 function getUserDebitPaymentModes() {
-    return (user.paymentModes.filter(paymentMode => paymentMode.isDebit)).map(paymentMode => paymentMode.name);
-}
-
+    return fetch(url + "/paymentModes/debit/" + user, {
+        method: "GET",
+        headers: {
+            "Content-Type": "application/json",
+            "auth-token": localStorage.getItem("token"),
+        }
+    }).then(function (response) {
+        return response.json();
+    }).then(function (response) {
+        return response.debitPaymentModes;
+    })
+};
