@@ -120,7 +120,7 @@ function getUserPaymentModes() {
 
 // Returns a promise with the user's list of payment modes
 function getUserDebitPaymentModes() {
-    return fetch(url + "/paymentModes/debit/" + user, {
+    return fetch(url + "/paymentModes/" + user + "/debit", {
         method: "GET",
         headers: {
             "Content-Type": "application/json",
