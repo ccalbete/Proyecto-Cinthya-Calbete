@@ -13,7 +13,7 @@ const incomePaymentModesDataList = document.getElementById("incomePaymentModes")
 
 function incomeCreateAndFillElements() {
 
-    getUserDebitPaymentModesNames().then(incomePaymentModesList => {
+    getUserDebitPaymentModes().then(incomePaymentModesList => {
         fillList(incomePaymentModesList, incomePaymentModesDataList);
     });
 
@@ -25,7 +25,6 @@ function incomeCreateAndFillElements() {
 }
 
 function saveIncomeData() {
-    const yearMonthValue = (incomeDateElement.value);
 
     fetch(url + "/incomes", {
         method: "POST",

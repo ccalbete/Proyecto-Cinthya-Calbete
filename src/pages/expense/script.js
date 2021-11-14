@@ -17,44 +17,40 @@ function expenseCreateAndFillElements() {
 
     getUserPlaces().then((expensePlacesList) => {
         fillList(expensePlacesList, expensePlacesDataList);
-    })
+    });
 
-    getUserCategoriesNames().then((expenseCategoriesList) => {
+    getUserCategories().then((expenseCategoriesList) => {
         fillList(expenseCategoriesList, expenseCategoriesDataList);
-    })
+    });
 
-    getUserDebitPaymentModesNames().then((expensePaymentModesList) => {
+    getUserPaymentModes().then((expensePaymentModesList) => {
         fillList(expensePaymentModesList, expensePaymentModesDataList);
-    })
+    });
+
     setCurrentDateByDefault(expenseDateElement);
 }
 
 
 function saveExpenseData() {
-    const yearMonthValue = (expenseDateElement.value)
-    const yearValue = yearMonthValue.substr(0, 4)
-    const monthValue = yearMonthValue.substr(6, 7)
-    const placeValue = expensePlaceInputElement.value;
-    const categoryValue = expenseCategoryInputElement.value;
-    const amountValue = parseInt(expenseAmountInput.value);
-    const paymentModeValue = expensePaymentModeInput.value;
 
-
-    // Update property spent of selected category
-    const expenseSelectedCategory = user.categories.find(category => category.name === categoryValue);
-    expenseSelectedCategory.spent += amountValue;
-
-    //Add expense history
-    user.expenses.push(
-        {
-            year: yearValue,
-            month: monthValue,
-            place: placeValue,
-            category: categoryValue,
-            amount: amountValue,
-            paymentMode: paymentModeValue
-        }
-    )
+    fetch(url + "/expenses", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json",
+            "auth-token": localStorage.getItem("token"),
+        },
+        body: JSON.stringify({
+            "date": expenseDateElement.value,
+            "place": expensePlaceInputElement.value,
+            "category": expenseCategoryInputElement.value,
+            "amount": parseInt(expenseAmountInput.value),
+            "paymentMode": expensePaymentModeInput.value
+        })
+    }).then(function (response) {
+        return response.json();
+    }).then(function (response) {
+        return response.success;
+    })
 
     resetForm(expenseForm, expenseDateElement);
 }

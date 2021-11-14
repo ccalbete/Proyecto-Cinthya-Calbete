@@ -100,7 +100,7 @@ function fillList(listValues, listElement) {
     listValues.forEach(value => {
         const option = document.createElement("option");
         listElement.appendChild(option);
-        option.value = value;
+        option.value = value.name;
     });
 }
 
@@ -118,9 +118,9 @@ function getUserPaymentModes() {
     })
 }
 
-// Returns a promise with the user's list of payment modes names
-function getUserDebitPaymentModesNames() {
-    return fetch(url + "/paymentModes/debit/" + user + "/names", {
+// Returns a promise with the user's list of payment modes
+function getUserDebitPaymentModes() {
+    return fetch(url + "/paymentModes/" + user + "/debit", {
         method: "GET",
         headers: {
             "Content-Type": "application/json",
@@ -129,7 +129,7 @@ function getUserDebitPaymentModesNames() {
     }).then(function (response) {
         return response.json();
     }).then(function (response) {
-        return response.debitPaymentModesNames;
+        return response.debitPaymentModes;
     })
 };
 
@@ -147,20 +147,6 @@ function getUserReasons() {
     })
 };
 
-function getUserCategoriesNames() {
-    return fetch(url + "/categories/" + user + "/names", {
-        method: "GET",
-        headers: {
-            "Content-Type": "application/json",
-            "auth-token": localStorage.getItem("token"),
-        }
-    }).then(function (response) {
-        return response.json();
-    }).then(function (response) {
-        return response.userCategoriesNames;
-    })
-}
-
 function getUserCategories() {
     return fetch(url + "/categories/" + user, {
         method: "GET",
@@ -175,8 +161,8 @@ function getUserCategories() {
     })
 }
 
-function getUserFixedExpenses() {
-    return fetch(url + "/fixedExpenses/" + user, {
+function getUserFixedExpensesCategories() {
+    return fetch(url + "/categories/" + user + "/fixedExpenses", {
         method: "GET",
         headers: {
             "Content-Type": "application/json",
@@ -185,7 +171,21 @@ function getUserFixedExpenses() {
     }).then(function (response) {
         return response.json();
     }).then(function (response) {
-        return response.userFixedExpenses;
+        return response.userFixedExpensesCategories;
+    })
+}
+
+function getUserNotFixedExpensesCategories() {
+    return fetch(url + "/categories/" + user + "/notFixedExpenses", {
+        method: "GET",
+        headers: {
+            "Content-Type": "application/json",
+            "auth-token": localStorage.getItem("token"),
+        }
+    }).then(function (response) {
+        return response.json();
+    }).then(function (response) {
+        return response.userNotFixedExpensesCategories;
     })
 }
 
@@ -200,5 +200,5 @@ function getUserPlaces() {
         return response.json();
     }).then(function (response) {
         return response.userPlaces;
-    })
+    });
 }

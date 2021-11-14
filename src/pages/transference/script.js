@@ -11,7 +11,7 @@ const transferenceDestintationInput = document.getElementById("transferenceDesti
 const transferenceDestinationsDataList = document.getElementById("transferenceDestinations");
 
 function transferenceCreateAndFillElements() {
-    getUserDebitPaymentModesNames().then(transferencePaymentModesList => {
+    getUserDebitPaymentModes().then(transferencePaymentModesList => {
         fillList(transferencePaymentModesList, transferenceOriginsDataList);
         fillList(transferencePaymentModesList, transferenceDestinationsDataList);
     });
