@@ -20,24 +20,24 @@ function transferenceCreateAndFillElements() {
 }
 
 function saveTransferenceData() {
-    const selectedOrigin = transferenceOriginInput.value;
-    const transferenceEnteredAmount = parseInt(transferenceAmountInput.value);
-    const selectedDestination = transferenceDestintationInput.value;
 
-    user.paymentModes.find(paymentMode => paymentMode.name === selectedOrigin).available -= transferenceEnteredAmount;
-    user.paymentModes.find(paymentMode => paymentMode.name === selectedDestination).available += transferenceEnteredAmount;
-
-    console.log("origin " + user.paymentModes.find(paymentMode => paymentMode.name === selectedOrigin).available);
-    console.log("destination " + user.paymentModes.find(paymentMode => paymentMode.name === selectedDestination).available)
-
-    //Save transference history 
-    user.transferences.push(
-        {
-            origin: selectedOrigin,
-            amount: transferenceEnteredAmount,
-            destination: selectedDestination,
-        }
-    )
+    fetch(url + "/transfers", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json",
+            "auth-token": localStorage.getItem("token"),
+        },
+        body: JSON.stringify({
+            "date": transferenceDateElement.value,
+            "origin": transferenceOriginInput.value,
+            "amount": parseInt(transferenceAmountInput.value),
+            "destination": transferenceDestintationInput.value
+        })
+    }).then(function (response) {
+        return response.json();
+    }).then(function (response) {
+        return response.success;
+    })
 
     resetForm(transferenceForm, transferenceDateElement);
 }
