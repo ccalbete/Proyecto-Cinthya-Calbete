@@ -82,6 +82,7 @@ function createAndFillElements(pageId) {
     }
 }
 
+// All the inputs of the form passed by parameter are emptied, but the date is not left empty
 function resetForm(formElement, dateElement) {
     formElement.reset();
     setCurrentDateByDefault(dateElement);
