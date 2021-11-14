@@ -10,16 +10,16 @@ const transferenceAmountInput = document.getElementById("transferenceAmountInput
 const transferenceDestintationInput = document.getElementById("transferenceDestintationInput");
 const transferenceDestinationsDataList = document.getElementById("transferenceDestinations");
 
-function transferenceCreateAndFillElements(){
-    const transferencePaymentModesList = getUserDebitPaymentModes()
-
-    fillList(transferencePaymentModesList, transferenceOriginsDataList);
-    fillList(transferencePaymentModesList, transferenceDestinationsDataList);
+function transferenceCreateAndFillElements() {
+    getUserDebitPaymentModes().then(transferencePaymentModesList => {
+        fillList(transferencePaymentModesList, transferenceOriginsDataList);
+        fillList(transferencePaymentModesList, transferenceDestinationsDataList);
+    });
 
     setCurrentDateByDefault(transferenceDateElement);
 }
 
-function saveTransferenceData(){
+function saveTransferenceData() {
     const selectedOrigin = transferenceOriginInput.value;
     const transferenceEnteredAmount = parseInt(transferenceAmountInput.value);
     const selectedDestination = transferenceDestintationInput.value;
@@ -28,16 +28,16 @@ function saveTransferenceData(){
     user.paymentModes.find(paymentMode => paymentMode.name === selectedDestination).available += transferenceEnteredAmount;
 
     console.log("origin " + user.paymentModes.find(paymentMode => paymentMode.name === selectedOrigin).available);
-    console.log("destination "+user.paymentModes.find(paymentMode => paymentMode.name === selectedDestination).available)
+    console.log("destination " + user.paymentModes.find(paymentMode => paymentMode.name === selectedDestination).available)
 
     //Save transference history 
     user.transferences.push(
         {
-          origin: selectedOrigin,
-          amount: transferenceEnteredAmount,
-          destination: selectedDestination,
+            origin: selectedOrigin,
+            amount: transferenceEnteredAmount,
+            destination: selectedDestination,
         }
-    )  
-    
+    )
+
     resetForm(transferenceForm, transferenceDateElement);
 }
