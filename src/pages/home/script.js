@@ -40,7 +40,7 @@ function fillPendingsList() {
                 pendingExpensesElement.appendChild(listItem);
             }
         });
-    })
+    }).catch(error => console.error('Error: ', error))
 }
 
 function fillSummarySection() {
@@ -70,7 +70,7 @@ function fillSummarySection() {
             categoryItemsGrouper.appendChild(categoryNameElement)
 
         }
-    })
+    }).catch(error => console.error('Error: ', error))
 
 
 }

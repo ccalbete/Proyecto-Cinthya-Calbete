@@ -115,7 +115,7 @@ function getUserPaymentModes() {
         return response.json();
     }).then(function (response) {
         return response.userPaymentModes;
-    })
+    }).catch(error => console.error('Error: ', error));
 }
 
 // Returns a promise with the user's list of payment modes
@@ -130,7 +130,7 @@ function getUserDebitPaymentModes() {
         return response.json();
     }).then(function (response) {
         return response.debitPaymentModes;
-    })
+    }).catch(error => console.error('Error: ', error));
 };
 
 function getUserReasons() {
@@ -144,7 +144,7 @@ function getUserReasons() {
         return response.json();
     }).then(function (response) {
         return response.userReasons;
-    })
+    }).catch(error => console.error('Error: ', error));
 };
 
 function getUserCategories() {
@@ -158,7 +158,7 @@ function getUserCategories() {
         return response.json();
     }).then(function (response) {
         return response.userCategories;
-    })
+    }).catch(error => console.error('Error: ', error));
 }
 
 function getUserFixedExpensesCategories() {
@@ -172,7 +172,7 @@ function getUserFixedExpensesCategories() {
         return response.json();
     }).then(function (response) {
         return response.userFixedExpensesCategories;
-    })
+    }).catch(error => console.error('Error: ', error));
 }
 
 function getUserNotFixedExpensesCategories() {
@@ -186,7 +186,7 @@ function getUserNotFixedExpensesCategories() {
         return response.json();
     }).then(function (response) {
         return response.userNotFixedExpensesCategories;
-    })
+    }).catch(error => console.error('Error: ', error));
 }
 
 function getUserPlaces() {
@@ -200,5 +200,5 @@ function getUserPlaces() {
         return response.json();
     }).then(function (response) {
         return response.userPlaces;
-    });
+    }).catch(error => console.error('Error: ', error));
 }

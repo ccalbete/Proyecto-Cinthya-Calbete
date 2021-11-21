@@ -33,7 +33,7 @@ function saveTransferenceData() {
             "amount": parseInt(transferenceAmountInput.value),
             "destination": transferenceDestintationInput.value
         })
-    }).then();
+    }).then().catch(error => console.error('Error: ', error));
 
     resetForm(transferenceForm, transferenceDateElement);
 }

@@ -23,7 +23,7 @@ function login() {
         } else {
             errorMessage.style.display = "block";
         }
-    })
+    }).catch(error => console.error('Error: ', error));
 };
 
 function loginClearInputData() {
