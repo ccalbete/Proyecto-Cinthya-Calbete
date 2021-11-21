@@ -46,11 +46,7 @@ function saveExpenseData() {
             "amount": parseInt(expenseAmountInput.value),
             "paymentMode": expensePaymentModeInput.value
         })
-    }).then(function (response) {
-        return response.json();
-    }).then(function (response) {
-        return response.success;
-    })
+    }).then()
 
     resetForm(expenseForm, expenseDateElement);
 }

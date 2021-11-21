@@ -38,11 +38,6 @@ function saveIncomeData() {
             "amount": parseInt(incomeAmountInput.value),
             "paymentMode": incomePaymentModeInput.value
         })
-    }).then(function (response) {
-        return response.json();
-    }).then(function (response) {
-        return response.success;
-    })
-
+    }).then();
     resetForm(incomeForm, incomeDateElement);
 }
