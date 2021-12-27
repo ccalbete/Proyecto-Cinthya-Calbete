@@ -148,6 +148,7 @@ function getUserReasons() {
 };
 
 function getUserCategories() {
+
     return fetch(url + "/categories/" + user, {
         method: "GET",
         headers: {

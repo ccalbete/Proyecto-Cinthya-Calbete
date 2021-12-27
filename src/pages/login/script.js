@@ -18,6 +18,7 @@ function login() {
     }).then(function (response) {
         if (response.success) {
             localStorage.setItem("token", response.token);
+            console.log(response);
             user = response.userId;
             displayPage("home");
         } else {

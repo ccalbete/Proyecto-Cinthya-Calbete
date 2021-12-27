@@ -21,6 +21,8 @@ function transferenceCreateAndFillElements() {
 
 function saveTransferenceData() {
 
+    console.log("date: " + transferenceDateElement.value);
+
     fetch(url + "/transfers", {
         method: "POST",
         headers: {
